@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://m0okpmbafpqq"
+path="res://.godot/imported/balcony_typeA.obj-04a0fa0fb0309b6e3b2542a10733f741.mesh"
+
+[deps]
+
+files=["res://.godot/imported/balcony_typeA.obj-04a0fa0fb0309b6e3b2542a10733f741.mesh"]
+
+source_file="res://assets/Models/OBJ format/balcony_typeA.obj"
+dest_files=["res://.godot/imported/balcony_typeA.obj-04a0fa0fb0309b6e3b2542a10733f741.mesh", "res://.godot/imported/balcony_typeA.obj-04a0fa0fb0309b6e3b2542a10733f741.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

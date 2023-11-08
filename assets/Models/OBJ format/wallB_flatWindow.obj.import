@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbbh8k48c8cpt"
+path="res://.godot/imported/wallB_flatWindow.obj-fbfff921add9c9fc560e873f4812752a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallB_flatWindow.obj-fbfff921add9c9fc560e873f4812752a.mesh"]
+
+source_file="res://assets/Models/OBJ format/wallB_flatWindow.obj"
+dest_files=["res://.godot/imported/wallB_flatWindow.obj-fbfff921add9c9fc560e873f4812752a.mesh", "res://.godot/imported/wallB_flatWindow.obj-fbfff921add9c9fc560e873f4812752a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
