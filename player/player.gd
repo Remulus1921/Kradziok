@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 0.75
+const SPEED = 1.2
 const JUMP_VELOCITY = 4.5
 var direction
 
@@ -41,3 +41,4 @@ func change_state(new_state_name):
 	state.name = new_state_name
 	
 	add_child(state)
+	
