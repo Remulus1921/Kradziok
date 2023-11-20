@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bok3sp3ue1wc4"
+path="res://.godot/imported/Joy Wants Eternity - From Embrace To Embrace.mp3-16610b8f789036934906daa6c32c36f2.mp3str"
+
+[deps]
+
+source_file="res://Joy Wants Eternity - From Embrace To Embrace.mp3"
+dest_files=["res://.godot/imported/Joy Wants Eternity - From Embrace To Embrace.mp3-16610b8f789036934906daa6c32c36f2.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

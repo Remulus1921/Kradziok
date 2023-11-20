@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="Kradziok"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
+
+[autoload]
+
+MainMenuAudio="*res://mainMenuAudio.tscn"
 
 [filesystem]
 

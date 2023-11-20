@@ -1,12 +1,12 @@
 [gd_scene load_steps=33 format=3 uid="uid://0ik18dx5rxgx"]
 
-[ext_resource type="Texture2D" uid="uid://b3u5hs40oima5" path="res://assets/Models/GLTF format/detailBricks_typeA_concrete.png" id="1_jxann"]
-[ext_resource type="Texture2D" uid="uid://bcbx5cq2y7at7" path="res://assets/Models/GLTF format/roadDirt_damaged_dirt.png" id="1_qwf68"]
+[ext_resource type="Texture2D" uid="uid://bpwmwu511gar2" path="res://assets/Models/GLTF format/detailBricks_typeA_concrete.png" id="1_jxann"]
+[ext_resource type="Texture2D" uid="uid://clr5632o04oxl" path="res://assets/Models/GLTF format/roadDirt_damaged_dirt.png" id="1_qwf68"]
 [ext_resource type="PackedScene" uid="uid://pn78mgyeddrk" path="res://player/player.tscn" id="6_t6ukb"]
-[ext_resource type="Texture2D" uid="uid://blaf7fhdb71pr" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
-[ext_resource type="Texture2D" uid="uid://cqxmxiy7w3j5q" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
-[ext_resource type="Texture2D" uid="uid://cchg201l5uitj" path="res://assets/Models/GLTF format/door_typeB_doors.png" id="9_ps4cx"]
-[ext_resource type="Texture2D" uid="uid://dhooktoaqjdah" path="res://assets/Models/GLTF format/door_typeB_metal.png" id="10_xbcly"]
+[ext_resource type="Texture2D" uid="uid://72n8s24cuivb" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
+[ext_resource type="Texture2D" uid="uid://43ospivcbbb3" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
+[ext_resource type="Texture2D" uid="uid://llufgvkmxfr2" path="res://assets/Models/GLTF format/door_typeB_doors.png" id="9_ps4cx"]
+[ext_resource type="Texture2D" uid="uid://b1en5up4k6moi" path="res://assets/Models/GLTF format/door_typeB_metal.png" id="10_xbcly"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s0wwr"]
 sky_top_color = Color(0.133333, 0.831373, 0.784314, 1)
