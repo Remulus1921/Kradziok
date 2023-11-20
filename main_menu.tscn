@@ -1,0 +1,143 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbp8yuxfimk4e"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_nlqx5"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nlqx5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -133.5
+offset_right = 212.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Nowa gra"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Ustawienia"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Wyjście z gry"
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -167.0
+offset_right = 212.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer"]
+layout_mode = 2
+
+[node name="HMusicContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="Settings/MarginContainer/VBoxContainer/HMusicContainer"]
+layout_mode = 2
+text = "Muzyka"
+
+[node name="MusicEnable" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/HMusicContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+button_pressed = true
+
+[node name="MusicSlider" type="HSlider" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 5.0
+step = 0.05
+value = 2.0
+
+[node name="HSoundContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SoundLabel" type="Label" parent="Settings/MarginContainer/VBoxContainer/HSoundContainer"]
+layout_mode = 2
+text = "Dźwięk"
+
+[node name="SoundEnable" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/HSoundContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+button_pressed = true
+
+[node name="SoundSlider" type="HSlider" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+value = 30.0
+
+[node name="HFullScreenContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreenLabel" type="Label" parent="Settings/MarginContainer/VBoxContainer/HFullScreenContainer"]
+layout_mode = 2
+text = "Pełny ekran"
+
+[node name="FullScreenEnable" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/HFullScreenContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="ReturnButton" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -81.0
+offset_right = 68.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Powrót"
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+bus = &"Sound"
+
+[connection signal="pressed" from="MarginContainer/Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Menu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/HMusicContainer/MusicEnable" to="." method="_on_music_enable_toggled"]
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/HSoundContainer/SoundEnable" to="." method="_on_sound_enable_toggled"]
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/SoundSlider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="Settings/ReturnButton" to="." method="_on_return_button_pressed"]
