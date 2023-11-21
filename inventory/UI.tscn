@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://ip7mowu0ti4q"]
+
+[ext_resource type="Script" path="res://inventory/UI.gd" id="1_sc3ky"]
+[ext_resource type="PackedScene" uid="uid://dohudmwu44dho" path="res://inventory/ItemInfo.tscn" id="1_wnqd8"]
+[ext_resource type="Script" path="res://inventory/InvContainer.gd" id="2_a2xj7"]
+
+[sub_resource type="Animation" id="Animation_un4rr"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -650), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7afgy"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -650)]
+}
+
+[sub_resource type="Animation" id="Animation_k03fr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -650)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcpop"]
+_data = {
+"RESET": SubResource("Animation_k03fr"),
+"TransIn": SubResource("Animation_un4rr"),
+"TransOut": SubResource("Animation_7afgy")
+}
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_sc3ky")
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -650.0
+offset_right = 40.0
+offset_bottom = -610.0
+
+[node name="BG" type="Panel" parent="Inventory"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 584.0
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 70
+text = "Ekwipunek"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Close" type="Button" parent="Inventory"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 136.0
+offset_right = 1072.0
+offset_bottom = 176.0
+text = "Zamknij"
+
+[node name="InvContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 306.0
+offset_right = 800.0
+offset_bottom = 482.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+script = ExtResource("2_a2xj7")
+
+[node name="ItemInfo" parent="Inventory" instance=ExtResource("1_wnqd8")]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_kcpop")
+}
+
+[connection signal="pressed" from="Inventory/Close" to="." method="_on_close_pressed"]
