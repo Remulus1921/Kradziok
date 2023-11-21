@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://byd5h26s70ej"]
+
+[ext_resource type="Texture2D" uid="uid://bd88r5wueul8v" path="res://icon.svg" id="1_8gxp2"]
+[ext_resource type="Script" path="res://inventory/Slot.gd" id="1_ff77j"]
+
+[node name="Slot" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_ff77j")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8gxp2")
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 44.0
+offset_right = 65.0
+offset_bottom = 70.0
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
