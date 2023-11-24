@@ -1,7 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://0ik18dx5rxgx"]
+[gd_scene load_steps=36 format=3 uid="uid://0ik18dx5rxgx"]
 
+[ext_resource type="Script" path="res://test.gd" id="1_ai7kr"]
 [ext_resource type="Texture2D" uid="uid://bpwmwu511gar2" path="res://assets/Models/GLTF format/detailBricks_typeA_concrete.png" id="1_jxann"]
 [ext_resource type="Texture2D" uid="uid://clr5632o04oxl" path="res://assets/Models/GLTF format/roadDirt_damaged_dirt.png" id="1_qwf68"]
+[ext_resource type="PackedScene" uid="uid://dkwt0dqr8adl1" path="res://game_menu.tscn" id="2_hmntr"]
+[ext_resource type="PackedScene" uid="uid://bngf1wk7fbqp6" path="res://ending_scene.tscn" id="3_hj63t"]
 [ext_resource type="PackedScene" uid="uid://pn78mgyeddrk" path="res://player/player.tscn" id="6_t6ukb"]
 [ext_resource type="Texture2D" uid="uid://72n8s24cuivb" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
 [ext_resource type="Texture2D" uid="uid://43ospivcbbb3" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
@@ -245,6 +248,12 @@ size = Vector3(4.75327, 2.48056, 0.210005)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120726, 0.0123684, -0.0141478)
+script = ExtResource("1_ai7kr")
+
+[node name="gameMenu" parent="." instance=ExtResource("2_hmntr")]
+
+[node name="ending_scene" parent="." instance=ExtResource("3_hj63t")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48ws8")

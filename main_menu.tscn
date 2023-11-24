@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbp8yuxfimk4e"]
+[gd_scene load_steps=3 format=3 uid="uid://dbp8yuxfimk4e"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_nlqx5"]
+[ext_resource type="Texture2D" uid="uid://d4artpd4pk72a" path="res://tloMenu.jpg" id="2_2gubt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_nlqx5")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +48,7 @@ text = "Wyjście z gry"
 
 [node name="Settings" type="Control" parent="."]
 visible = false
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,6 +136,16 @@ text = "Powrót"
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 bus = &"Sound"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_2gubt")
+
 [connection signal="pressed" from="MarginContainer/Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Menu/QuitButton" to="." method="_on_quit_button_pressed"]
@@ -140,4 +153,5 @@ bus = &"Sound"
 [connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/HSoundContainer/SoundEnable" to="." method="_on_sound_enable_toggled"]
 [connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/SoundSlider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/HFullScreenContainer/FullScreenEnable" to="." method="_on_full_screen_enable_toggled"]
 [connection signal="pressed" from="Settings/ReturnButton" to="." method="_on_return_button_pressed"]
