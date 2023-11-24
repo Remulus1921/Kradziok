@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqbmbym5fgdnl"]
 
-[ext_resource type="Texture2D" uid="uid://tqhjtroiaowj" path="res://assets/Models/GLTF format/wallA_wall_lines.png" id="1_mxotj"]
-[ext_resource type="Texture2D" uid="uid://dyhksvgd27sq" path="res://assets/Models/GLTF format/wallA_concrete.png" id="2_56m4s"]
+[ext_resource type="Texture2D" uid="uid://buw441vs3kn1q" path="res://assets/Models/GLTF format/wallA_wall_lines.png" id="1_mxotj"]
+[ext_resource type="Texture2D" uid="uid://dye1v1q4bsx2q" path="res://assets/Models/GLTF format/wallA_concrete.png" id="2_56m4s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxv8i"]
 resource_name = "wall_lines"
