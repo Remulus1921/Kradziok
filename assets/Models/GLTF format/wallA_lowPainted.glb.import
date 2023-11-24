@@ -1,0 +1,32 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bjkjq2qhijljm"
+path="res://.godot/imported/wallA_lowPainted.glb-b9bf0f6b7db4d5ff67460546bc35dcdf.scn"
+
+[deps]
+
+source_file="res://assets/Models/GLTF format/wallA_lowPainted.glb"
+dest_files=["res://.godot/imported/wallA_lowPainted.glb-b9bf0f6b7db4d5ff67460546bc35dcdf.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=1
