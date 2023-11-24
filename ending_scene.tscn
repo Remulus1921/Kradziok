@@ -1,0 +1,114 @@
+[gd_scene load_steps=2 format=3 uid="uid://bngf1wk7fbqp6"]
+
+[ext_resource type="Script" path="res://ending_scene.gd" id="1_vacye"]
+
+[node name="ending_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vacye")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -263.0
+offset_right = 313.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="MarginContainer"]
+layout_mode = 2
+item_count = 20
+max_columns = 2
+item_0/text = "Przedmiot z inwentarza [0]"
+item_0/selectable = false
+item_1/text = "200 zł"
+item_1/selectable = false
+item_2/text = "Przedmiot z inwentarza [1]"
+item_2/selectable = false
+item_3/text = "150 zł"
+item_3/selectable = false
+item_4/text = "Przedmiot z inwentarza [2]"
+item_4/selectable = false
+item_5/text = "175 zł"
+item_5/selectable = false
+item_6/text = "Przedmiot z inwentarza [3]"
+item_6/selectable = false
+item_7/text = "400 zł"
+item_7/selectable = false
+item_8/text = "Przedmiot z inwentarza [4]"
+item_8/selectable = false
+item_9/text = "125 zł"
+item_9/selectable = false
+item_10/text = "Przedmiot z inwentarza [5]"
+item_10/selectable = false
+item_11/text = "200 zł"
+item_11/selectable = false
+item_12/text = "Przedmiot z inwentarza [6]"
+item_12/selectable = false
+item_13/text = "225 zł"
+item_13/selectable = false
+item_14/text = "Przedmiot z inwentarza [7]"
+item_14/selectable = false
+item_15/text = "150 zł"
+item_15/selectable = false
+item_16/text = "Przedmiot z inwentarza [8]"
+item_16/selectable = false
+item_17/text = "200 zł"
+item_17/selectable = false
+item_18/text = "Przedmiot z inwentarza [9]"
+item_18/selectable = false
+item_19/text = "175 zł"
+item_19/selectable = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = 57.0
+offset_right = 312.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+text = " Razem: I tak nic za to nie kupisz"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.5
+offset_top = -110.0
+offset_right = 179.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="NextGameButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Nowa gra"
+
+[node name="QuitToTheMenuButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Powrót do menu"
+
+[connection signal="pressed" from="VBoxContainer/NextGameButton" to="." method="_on_next_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitToTheMenuButton" to="." method="_on_quit_to_the_menu_button_pressed"]
