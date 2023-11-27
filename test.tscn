@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://0ik18dx5rxgx"]
+[gd_scene load_steps=119 format=3 uid="uid://0ik18dx5rxgx"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_ai7kr"]
 [ext_resource type="Texture2D" uid="uid://b3u5hs40oima5" path="res://assets/Models/GLTF format/detailBricks_typeA_concrete.png" id="1_jxann"]
@@ -6,9 +6,11 @@
 [ext_resource type="Script" path="res://Camera3D.gd" id="2_bbnet"]
 [ext_resource type="PackedScene" uid="uid://dkwt0dqr8adl1" path="res://game_menu.tscn" id="2_hmntr"]
 [ext_resource type="PackedScene" uid="uid://bngf1wk7fbqp6" path="res://ending_scene.tscn" id="3_hj63t"]
+[ext_resource type="PackedScene" uid="uid://hsboex1c30wy" path="res://lost_scene.tscn" id="4_nlo55"]
 [ext_resource type="PackedScene" uid="uid://pn78mgyeddrk" path="res://player/player.tscn" id="6_t6ukb"]
 [ext_resource type="Texture2D" uid="uid://blaf7fhdb71pr" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
 [ext_resource type="Texture2D" uid="uid://cqxmxiy7w3j5q" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
+[ext_resource type="PackedScene" uid="uid://db5477qd2pcgf" path="res://npc_1.tscn" id="8_rhr2u"]
 [ext_resource type="Texture2D" uid="uid://cchg201l5uitj" path="res://assets/Models/GLTF format/door_typeB_doors.png" id="9_ps4cx"]
 [ext_resource type="Texture2D" uid="uid://dhooktoaqjdah" path="res://assets/Models/GLTF format/door_typeB_metal.png" id="10_xbcly"]
 
@@ -98,6 +100,10 @@ _surfaces = [{
 "vertex_count": 6,
 "vertex_data": PackedByteArray(0, 0, 0, 191, 205, 204, 204, 62, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 208, 204, 204, 62, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 208, 204, 204, 190, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 208, 204, 204, 190, 255, 255, 255, 127, 255, 255, 255, 255, 0, 0, 0, 63, 0, 0, 0, 0, 208, 204, 204, 62, 255, 255, 255, 127, 255, 255, 255, 255, 0, 0, 0, 63, 205, 204, 204, 62, 0, 0, 0, 0, 255, 255, 255, 127, 255, 255, 255, 255)
 }]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_mbjlv"]
+vertices = PackedVector3Array(-6.06026, 2.98337, -3.6845, -6.81026, 2.98337, -3.6845, -6.81026, 2.98337, -3.1845, -6.06026, 2.98337, -2.9345, -5.81026, 2.98337, -3.1845, -4.56026, 2.98337, -0.184503, -4.56026, 2.98337, 2.0655, -3.31026, 2.98337, 2.5655, -3.06026, 2.98337, -2.6845, -1.81026, 2.98337, -2.4345, -1.31026, 2.98337, -0.434503, 0.18974, 2.98337, -0.434503, 1.68974, 2.98337, -3.6845, -4.56026, 2.98337, 2.0655, -6.31026, 2.98337, 2.0655, -6.31026, 2.98337, 2.5655, -3.31026, 2.98337, 2.5655, -3.31026, 2.98337, -3.6845, -3.56026, 2.98337, -3.1845, -3.06026, 2.98337, -2.6845, -1.81026, 2.98337, -2.4345, 1.68974, 2.98337, -3.6845, -1.81026, 2.98337, -2.4345, -1.81026, 2.98337, 0.0654974, -1.31026, 2.98337, -0.434503, 0.18974, 2.98337, -0.434503, 1.18974, 2.98337, 1.0655, 1.68974, 2.98337, 1.0655, 1.68974, 2.98337, -3.6845, -3.56026, 2.98337, -3.1845, -5.81026, 2.98337, -3.1845, -6.06026, 2.98337, -2.9345, -6.31026, 2.98337, -0.434503, -4.56026, 2.98337, -0.184503, -3.06026, 2.98337, -2.6845, -1.06026, 0.483373, -2.6845, -1.31026, 0.483373, -2.9345, -1.81026, 0.483373, -2.9345, -1.81026, 0.483373, -1.6845, -1.06026, 0.483373, -0.434503, -6.31026, 0.483373, 1.0655, -6.81026, 0.483373, 1.0655, -6.81026, 0.483373, 2.5655, 5.18974, 0.483373, -2.9345, 5.18974, 0.483373, -3.6845, 3.18974, 0.483373, -3.6845, 3.18974, 0.483373, -1.6845, 6.43974, 0.483373, 2.5655, 6.68974, 0.483373, 0.815497, 5.93974, 0.483373, 0.315497, 3.68974, 0.483373, 0.315497, 3.68974, 0.483373, 2.5655, -0.56026, 0.483373, -3.1845, 1.68974, 0.483373, -2.9345, 1.68974, 0.483373, -3.6845, -1.06026, 0.483373, -3.6845, 1.68974, 0.483373, 2.5655, 1.68974, 0.483373, 0.0654974, 1.43974, 0.483373, 0.0654974, -0.56026, 0.483373, -3.1845, -1.06026, 0.483373, -3.6845, -1.31026, 0.483373, -2.9345, -1.06026, 0.483373, -2.6845, 5.93974, 0.483373, -2.6845, 5.18974, 0.483373, -2.9345, 3.18974, 0.483373, -1.6845, 2.93974, 0.483373, -0.184503, 3.68974, 0.483373, 0.315497, 5.93974, 0.483373, 0.315497, -1.06026, 0.483373, 2.5655, 1.68974, 0.483373, 2.5655, 1.43974, 0.483373, 0.0654974, -0.56026, 0.483373, 0.0654974, -1.06026, 0.483373, 0.315497, -3.31026, 0.483373, -3.1845, -5.56026, 0.483373, -3.6845, -6.06026, 0.483373, -2.1845, -5.81026, 0.483373, 0.0654974, -3.31026, 0.483373, 0.0654974, -3.06026, 0.483373, -1.4345, -1.06026, 0.483373, -0.434503, -1.81026, 0.483373, -1.6845, -3.06026, 0.483373, -1.4345, -3.31026, 0.483373, 0.0654974, -2.06026, 0.483373, -0.184503, -3.06026, 0.483373, -1.4345, 2.93974, 0.483373, -0.184503, 3.18974, 0.483373, -1.6845, 1.93974, 0.483373, -1.4345, 1.43974, 0.483373, 0.0654974, 1.68974, 0.483373, 0.0654974, -5.81026, 0.483373, 0.0654974, -6.31026, 0.483373, 1.0655, -6.81026, 0.483373, 2.5655, -3.31026, 0.483373, 2.5655, -3.31026, 0.483373, 0.0654974, -0.56026, 0.483373, 0.0654974, -1.06026, 0.483373, -0.434503, -3.06026, 0.483373, -1.4345, -2.06026, 0.483373, -0.184503, -1.06026, 0.483373, 0.315497, 5.93974, 2.98337, -2.1845, 6.68974, 2.98337, -2.4345, 6.68974, 2.98337, -3.6845, 4.18974, 2.98337, -1.4345, 5.93974, 2.98337, -1.6845, 5.93974, 2.98337, -2.1845, 5.93974, 2.98337, -2.1845, 6.68974, 2.98337, -3.6845, 4.18974, 2.98337, -3.6845, 3.93974, 2.98337, -3.1845, 4.18974, 2.98337, -1.4345, 3.18974, 2.98337, -3.1845, 3.68974, 2.98337, 2.5655, 4.18974, 2.98337, 0.815497, 4.18974, 2.98337, -1.4345, 3.93974, 2.98337, -3.1845, 5.93974, 2.98337, 2.5655, 5.93974, 2.98337, 1.0655, 4.18974, 2.98337, 0.815497, 3.68974, 2.98337, 2.5655, 0.18974, 1.23337, -2.1845, 0.18974, 1.23337, -0.934503, 0.68974, 1.23337, -0.934503, 0.68974, 1.23337, -2.1845, 5.43974, 3.48337, 0.0654974, 6.68974, 3.48337, -0.184503, 6.43974, 3.48337, -0.684503, 5.43974, 3.48337, -0.684503, -6.81026, 3.48337, 0.565497, -6.81026, 3.48337, 1.0655, -5.56026, 3.48337, 1.0655, -5.56026, 3.48337, 0.565497, -0.81026, 3.98337, 1.3155, -1.31026, 3.98337, 1.3155, -0.81026, 3.98337, 2.0655, 0.18974, 3.98337, 1.3155, -0.56026, 3.98337, 0.565497, -0.81026, 3.98337, 1.3155, -0.81026, 3.98337, 2.0655)
+polygons = [PackedInt32Array(4, 3, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(20, 17, 21), PackedInt32Array(24, 23, 22), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 28), PackedInt32Array(30, 29, 31), PackedInt32Array(31, 29, 34), PackedInt32Array(31, 34, 33), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(38, 35, 39), PackedInt32Array(42, 41, 40), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 50), PackedInt32Array(50, 47, 51), PackedInt32Array(53, 52, 54), PackedInt32Array(54, 52, 55), PackedInt32Array(58, 57, 56), PackedInt32Array(62, 61, 59), PackedInt32Array(59, 61, 60), PackedInt32Array(66, 65, 67), PackedInt32Array(67, 65, 68), PackedInt32Array(68, 65, 64), PackedInt32Array(68, 64, 63), PackedInt32Array(72, 71, 73), PackedInt32Array(73, 71, 69), PackedInt32Array(69, 71, 70), PackedInt32Array(79, 78, 74), PackedInt32Array(74, 78, 77), PackedInt32Array(74, 77, 76), PackedInt32Array(74, 76, 75), PackedInt32Array(82, 81, 80), PackedInt32Array(83, 85, 84), PackedInt32Array(90, 89, 86), PackedInt32Array(86, 89, 88), PackedInt32Array(86, 88, 87), PackedInt32Array(92, 91, 93), PackedInt32Array(93, 91, 95), PackedInt32Array(93, 95, 94), PackedInt32Array(96, 100, 97), PackedInt32Array(97, 100, 99), PackedInt32Array(97, 99, 98), PackedInt32Array(103, 102, 101), PackedInt32Array(106, 105, 104), PackedInt32Array(110, 109, 111), PackedInt32Array(111, 109, 107), PackedInt32Array(107, 109, 108), PackedInt32Array(116, 115, 112), PackedInt32Array(112, 115, 114), PackedInt32Array(112, 114, 113), PackedInt32Array(118, 117, 119), PackedInt32Array(119, 117, 120), PackedInt32Array(124, 123, 121), PackedInt32Array(121, 123, 122), PackedInt32Array(127, 126, 128), PackedInt32Array(128, 126, 125), PackedInt32Array(132, 131, 129), PackedInt32Array(129, 131, 130), PackedInt32Array(135, 134, 133), PackedInt32Array(137, 136, 138), PackedInt32Array(138, 136, 139)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ptn5"]
 resource_name = "wall_lines"
@@ -1377,6 +1383,9 @@ script = ExtResource("1_ai7kr")
 [node name="ending_scene" parent="." instance=ExtResource("3_hj63t")]
 visible = false
 
+[node name="lost_scene" parent="." instance=ExtResource("4_nlo55")]
+visible = false
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48ws8")
 
@@ -1407,1153 +1416,1173 @@ mesh = SubResource("ArrayMesh_mm6l3")
 [node name="Player" parent="." instance=ExtResource("6_t6ukb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2736, 0.237082, 2.36821)
 
-[node name="p1" type="Node3D" parent="."]
+[node name="NPC1" parent="." instance=ExtResource("8_rhr2u")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 
-[node name="wallA3" type="MeshInstance3D" parent="p1"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_mbjlv")
+
+[node name="p1" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="wallA3" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA2" type="MeshInstance3D" parent="p1"]
+[node name="wallA2" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA8" type="MeshInstance3D" parent="p1"]
+[node name="wallA8" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA5" type="MeshInstance3D" parent="p1"]
+[node name="wallA5" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA6" type="MeshInstance3D" parent="p1"]
+[node name="wallA6" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -1.46699, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA7" type="MeshInstance3D" parent="p1"]
+[node name="wallA7" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 1.04289, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA4" type="MeshInstance3D" parent="p1"]
+[node name="wallA4" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA14" type="MeshInstance3D" parent="p1"]
+[node name="wallA14" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA14"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA14/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA15" type="MeshInstance3D" parent="p1"]
+[node name="wallA15" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA15"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA16" type="MeshInstance3D" parent="p1"]
+[node name="wallA16" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 3.56243, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA16"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA16/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA16/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA17" type="MeshInstance3D" parent="p1"]
+[node name="wallA17" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 6.07231, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA17"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA17/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA9" type="MeshInstance3D" parent="p1"]
+[node name="wallA9" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA10" type="MeshInstance3D" parent="p1"]
+[node name="wallA10" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA11" type="MeshInstance3D" parent="p1"]
+[node name="wallA11" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA12" type="MeshInstance3D" parent="p1"]
+[node name="wallA12" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -6.47723, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA12"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA13" type="MeshInstance3D" parent="p1"]
+[node name="wallA13" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -3.96735, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA13"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA13/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="doorRight" type="MeshInstance3D" parent="p1"]
+[node name="doorRight" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 4.83364, 0.080146, -4.38012)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/doorRight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/doorRight"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/doorRight/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/doorRight/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="doorExit" type="MeshInstance3D" parent="p1"]
+[node name="doorExit" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 3, 0, 2, 0, -8.74228e-08, 7.16925, 0.080146, 1.68304)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/doorExit"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/doorExit"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/doorExit/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/doorExit/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="door_typeB5" type="MeshInstance3D" parent="p1"]
+[node name="door_typeB5" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 3, 0, -2, 0, -8.74228e-08, 7.51067, 0.080146, 1.68304)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/door_typeB5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/door_typeB5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/door_typeB5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/door_typeB5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="doorMiddle" type="MeshInstance3D" parent="p1"]
+[node name="doorMiddle" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -0.211138, 0.080146, -4.34655)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/doorMiddle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/doorMiddle"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/doorMiddle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/doorMiddle/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="p1"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/p1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0226498, 0.0203238, -0.58725)
 size = Vector3(14.9898, 0.02, 7.52056)
 material = SubResource("StandardMaterial3D_3k5s2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p1/CSGBox3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/CSGBox3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/CSGBox3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/CSGBox3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0184334, 0)
 shape = SubResource("BoxShape3D_d2u5r")
 
-[node name="p2" type="Node3D" parent="."]
+[node name="p2" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 
-[node name="wallA3" type="MeshInstance3D" parent="p2"]
+[node name="wallA3" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA2" type="MeshInstance3D" parent="p2"]
+[node name="wallA2" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, -0.770099)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA18" type="MeshInstance3D" parent="p2"]
+[node name="wallA18" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, 1.70017)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA18"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA18"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA18/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA18/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA8" type="MeshInstance3D" parent="p2"]
+[node name="wallA8" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA5" type="MeshInstance3D" parent="p2"]
+[node name="wallA5" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, -0.772346)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA6" type="MeshInstance3D" parent="p2"]
+[node name="wallA6" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -1.46699, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA7" type="MeshInstance3D" parent="p2"]
+[node name="wallA7" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 1.04289, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA4" type="MeshInstance3D" parent="p2"]
+[node name="wallA4" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA14" type="MeshInstance3D" parent="p2"]
+[node name="wallA14" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA14"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA14/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA15" type="MeshInstance3D" parent="p2"]
+[node name="wallA15" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA15"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA16" type="MeshInstance3D" parent="p2"]
+[node name="wallA16" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 3.56243, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA16"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA16/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA16/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA17" type="MeshInstance3D" parent="p2"]
+[node name="wallA17" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 6.07231, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA17"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA17/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA9" type="MeshInstance3D" parent="p2"]
+[node name="wallA9" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA10" type="MeshInstance3D" parent="p2"]
+[node name="wallA10" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA11" type="MeshInstance3D" parent="p2"]
+[node name="wallA11" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA12" type="MeshInstance3D" parent="p2"]
+[node name="wallA12" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -6.47723, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA12"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA13" type="MeshInstance3D" parent="p2"]
+[node name="wallA13" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -3.96735, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA13"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA13/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="doorRight" type="MeshInstance3D" parent="p2"]
+[node name="doorRight" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 4.83364, 0.080146, -4.38012)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/doorRight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/doorRight"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/doorRight/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/doorRight/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="doorMiddle" type="MeshInstance3D" parent="p2"]
+[node name="doorMiddle" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -0.211138, 0.0801461, -4.41012)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/doorMiddle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/doorMiddle"]
 
-[node name="doorcolission" type="CollisionShape3D" parent="p2/doorMiddle/StaticBody3D"]
+[node name="doorcolission" type="CollisionShape3D" parent="NavigationRegion3D/p2/doorMiddle/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="p2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0226498, 0.0203238, -0.58725)
 size = Vector3(14.9898, 0.02, 7.52056)
 material = SubResource("StandardMaterial3D_3k5s2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/CSGBox3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/CSGBox3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/CSGBox3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/CSGBox3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0184334, 0)
 shape = SubResource("BoxShape3D_d2u5r")
 
-[node name="middle1floorWindow" type="MeshInstance3D" parent="p2"]
+[node name="middle1floorWindow" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/middle1floorWindow"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/middle1floorWindow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/middle1floorWindow/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/middle1floorWindow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="middle1floorWindow2" type="MeshInstance3D" parent="p2"]
+[node name="middle1floorWindow2" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04052, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/middle1floorWindow2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/middle1floorWindow2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/middle1floorWindow2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/middle1floorWindow2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="middle1floorWindow3" type="MeshInstance3D" parent="p2"]
+[node name="middle1floorWindow3" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01759, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/middle1floorWindow3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/middle1floorWindow3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/middle1floorWindow3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/middle1floorWindow3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="0floorWindow" type="MeshInstance3D" parent="p2"]
+[node name="0floorWindow" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01759, -2.52633, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/0floorWindow"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/0floorWindow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/0floorWindow/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/0floorWindow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="0floorWindow2" type="MeshInstance3D" parent="p2"]
+[node name="0floorWindow2" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0317907, -2.52633, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/0floorWindow2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/0floorWindow2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/0floorWindow2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/0floorWindow2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="0floorWindow3" type="MeshInstance3D" parent="p2"]
+[node name="0floorWindow3" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02128, -2.52633, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="p2/0floorWindow3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/0floorWindow3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/0floorWindow3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/0floorWindow3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="Meble" type="Node3D" parent="."]
+[node name="Meble" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.327)
 
-[node name="Pokoj1" type="Node3D" parent="Meble"]
+[node name="Pokoj1" type="Node3D" parent="NavigationRegion3D/Meble"]
 
-[node name="Furniture_Bed_2" type="MeshInstance3D" parent="Meble/Pokoj1"]
+[node name="Furniture_Bed_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, -6.66944, 2.90385, -11.464)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ki60x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj1/Furniture_Bed_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Bed_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_Bed_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Bed_2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.267973, 0.20192, 0)
 shape = SubResource("BoxShape3D_ivej4")
 
-[node name="Furniture_Cabinet_2" type="MeshInstance3D" parent="Meble/Pokoj1"]
+[node name="Furniture_Cabinet_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1"]
 transform = Transform3D(0.00376952, 0, 0.999993, 0, 1, 0, -0.999993, 0, 0.00376952, -7.28009, 3.44671, -14.2418)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_njl1e")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_2_Door_1" type="MeshInstance3D" parent="Meble/Pokoj1/Furniture_Cabinet_2"]
+[node name="Furniture_Cabinet_2_Door_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Cabinet_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495677, -0.0867244, 0.593559)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_rm2lh")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_2_Door_2" type="MeshInstance3D" parent="Meble/Pokoj1/Furniture_Cabinet_2"]
+[node name="Furniture_Cabinet_2_Door_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Cabinet_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.495676, -0.0865182, 0.593558)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_fyqp2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj1/Furniture_Cabinet_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Cabinet_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_Cabinet_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Cabinet_2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45058e-08, 0.191041, 0.148007)
 shape = SubResource("BoxShape3D_7ung6")
 
-[node name="Pokoj1_szafa" type="Area3D" parent="Meble/Pokoj1/Furniture_Cabinet_2/StaticBody3D"]
+[node name="Pokoj1_szafa" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Cabinet_2/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_Cabinet_2/StaticBody3D/Pokoj1_szafa"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Cabinet_2/StaticBody3D/Pokoj1_szafa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0.191041, 0.484224)
 shape = SubResource("BoxShape3D_7ung6")
 
-[node name="Furniture_Shelf_3" type="MeshInstance3D" parent="Meble/Pokoj1"]
+[node name="Furniture_Shelf_3" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1"]
 transform = Transform3D(1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, -4.7424, 3.56152, -16.4413)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ee503")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj1/Furniture_Shelf_3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Shelf_3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_Shelf_3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Shelf_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0330384, 0.0458884)
 shape = SubResource("BoxShape3D_ypioi")
 
-[node name="Pokoj1_polka" type="Area3D" parent="Meble/Pokoj1/Furniture_Shelf_3/StaticBody3D"]
+[node name="Pokoj1_polka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Shelf_3/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_Shelf_3/StaticBody3D/Pokoj1_polka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_Shelf_3/StaticBody3D/Pokoj1_polka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.0330384, 0.217375)
 shape = SubResource("BoxShape3D_ypioi")
 
-[node name="Furniture_DeskDrawers_1" type="MeshInstance3D" parent="Meble/Pokoj1"]
+[node name="Furniture_DeskDrawers_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1"]
 transform = Transform3D(-2.8213e-07, 0, 1, 0, 1, 0, -1, 0, -2.8213e-07, -7.28811, 3.00173, -10.2228)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_8fjif")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_1"]
+[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86063e-05, 0.183082, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_01806")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_1"]
+[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86685e-05, -0.279268, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_2w2yk")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0408683)
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Pokoj1_szafka_nocna_lewa" type="Area3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_1/StaticBody3D"]
+[node name="Pokoj1_szafka_nocna_lewa" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_1/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_1/StaticBody3D/Pokoj1_szafka_nocna_lewa"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_1/StaticBody3D/Pokoj1_szafka_nocna_lewa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0, 0.214486)
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Furniture_DeskDrawers_2" type="MeshInstance3D" parent="Meble/Pokoj1"]
+[node name="Furniture_DeskDrawers_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1"]
 transform = Transform3D(-2.8213e-07, 0, 1, 0, 1, 0, -1, 0, -2.8213e-07, -7.26928, 3.00173, -12.7673)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_8fjif")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_2"]
+[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86063e-05, 0.183082, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_01806")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_2"]
+[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86685e-05, -0.279268, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_2w2yk")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-08, 0, 0.0408683)
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Pokoj1_szafka_nocna_prawa" type="Area3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_2/StaticBody3D"]
+[node name="Pokoj1_szafka_nocna_prawa" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_2/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj1/Furniture_DeskDrawers_2/StaticBody3D/Pokoj1_szafka_nocna_prawa"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj1/Furniture_DeskDrawers_2/StaticBody3D/Pokoj1_szafka_nocna_prawa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.214486)
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Pokoj2" type="Node3D" parent="Meble"]
+[node name="Pokoj2" type="Node3D" parent="NavigationRegion3D/Meble"]
 
-[node name="Furniture_Chair_6" type="MeshInstance3D" parent="Meble/Pokoj2"]
+[node name="Furniture_Chair_6" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj2"]
 transform = Transform3D(-0.713446, 0, -0.70071, 0, 1, 0, 0.70071, 0, -0.713446, 0.381178, 3.19493, -10.7174)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj2/Furniture_Chair_6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Chair_6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Chair_7" type="MeshInstance3D" parent="Meble/Pokoj2"]
+[node name="Furniture_Chair_7" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj2"]
 transform = Transform3D(-0.713446, 0, -0.70071, 0, 1, 0, 0.70071, 0, -0.713446, -0.301432, 3.15763, -10.0537)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj2/Furniture_Chair_7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Chair_7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Chair_8" type="MeshInstance3D" parent="Meble/Pokoj2"]
+[node name="Furniture_Chair_8" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj2"]
 transform = Transform3D(0.713446, 0, 0.70071, 0, 1, 0, -0.70071, 0, 0.713446, -1.424, 3.19493, -11.1966)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj2/Furniture_Chair_8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Chair_8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Chair_9" type="MeshInstance3D" parent="Meble/Pokoj2"]
+[node name="Furniture_Chair_9" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj2"]
 transform = Transform3D(0.713446, 0, 0.70071, 0, 1, 0, -0.70071, 0, 0.713446, -0.741387, 3.15763, -11.8604)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj2/Furniture_Chair_9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Chair_9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Chair_9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Table_2" type="MeshInstance3D" parent="Meble/Pokoj2"]
+[node name="Furniture_Table_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj2"]
 transform = Transform3D(-0.713446, 0, -0.70071, 0, 1, 0, 0.70071, 0, -0.713446, -0.541725, 3.34505, -11.0103)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_xk8fn")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj2/Furniture_Table_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Table_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Table_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Table_2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0165539, -0.293996, 0)
 shape = SubResource("BoxShape3D_olliu")
 
-[node name="Furniture_Shelf_6" type="MeshInstance3D" parent="Meble/Pokoj2"]
+[node name="Furniture_Shelf_6" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj2"]
 transform = Transform3D(3.55989e-07, 0, -0.874404, 0, 1, 0, 0.585536, 0, 5.31612e-07, 1.87234, 3.56152, -10.0872)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ee503")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj2/Furniture_Shelf_6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Shelf_6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Shelf_6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Shelf_6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0330384, 0.0458884)
 shape = SubResource("BoxShape3D_ypioi")
 
-[node name="Pokoj2_polka" type="Area3D" parent="Meble/Pokoj2/Furniture_Shelf_6/StaticBody3D"]
+[node name="Pokoj2_polka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Shelf_6/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj2/Furniture_Shelf_6/StaticBody3D/Pokoj2_polka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj2/Furniture_Shelf_6/StaticBody3D/Pokoj2_polka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.0330384, 0.217375)
 shape = SubResource("BoxShape3D_ypioi")
 
-[node name="Pokoj3" type="Node3D" parent="Meble"]
+[node name="Pokoj3" type="Node3D" parent="NavigationRegion3D/Meble"]
 
-[node name="Furniture_Cabinet_1" type="MeshInstance3D" parent="Meble/Pokoj3"]
+[node name="Furniture_Cabinet_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3"]
 transform = Transform3D(3.69553e-07, 0, -1, 0, 1, 0, 1, 0, 3.69553e-07, 6.96369, 3.502, -10.3961)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_v3yq5")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_1_Door_1" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_Cabinet_1"]
+[node name="Furniture_Cabinet_1_Door_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.501076, 0.259919, 0.414246)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_6lg2y")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_1_Door_2" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_Cabinet_1"]
+[node name="Furniture_Cabinet_1_Door_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501076, 0.259919, 0.414246)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_j656d")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_1_Drawer" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_Cabinet_1"]
+[node name="Furniture_Cabinet_1_Drawer" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.754699, 0.11286)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_81u0s")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj3/Furniture_Cabinet_1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Cabinet_1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00326291, 0, 0.0731392)
 shape = SubResource("BoxShape3D_1la2j")
 
-[node name="Pokoj3_szafa" type="Area3D" parent="Meble/Pokoj3/Furniture_Cabinet_1/StaticBody3D"]
+[node name="Pokoj3_szafa" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Cabinet_1/StaticBody3D/Pokoj3_szafa"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_1/StaticBody3D/Pokoj3_szafa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00326324, 0, 0.321964)
 shape = SubResource("BoxShape3D_1la2j")
 
-[node name="Furniture_Bed_3" type="MeshInstance3D" parent="Meble/Pokoj3"]
+[node name="Furniture_Bed_3" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 6.34671, 2.90385, -12.6183)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ki60x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj3/Furniture_Bed_3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Bed_3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Bed_3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Bed_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.267973, 0.20192, 0)
 shape = SubResource("BoxShape3D_ivej4")
 
-[node name="Furniture_DeskDrawers_3" type="MeshInstance3D" parent="Meble/Pokoj3"]
+[node name="Furniture_DeskDrawers_3" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3"]
 transform = Transform3D(3.69553e-07, 0, -1, 0, 1, 0, 1, 0, 3.69553e-07, 6.99645, 3.00173, -13.8965)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_8fjif")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_DeskDrawers_3"]
+[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_DeskDrawers_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86063e-05, 0.183082, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_01806")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_DeskDrawers_3"]
+[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_DeskDrawers_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86685e-05, -0.279268, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_2w2yk")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj3/Furniture_DeskDrawers_3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_DeskDrawers_3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_DeskDrawers_3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_DeskDrawers_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0408683)
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Pokoj3_szafka_nocna" type="Area3D" parent="Meble/Pokoj3/Furniture_DeskDrawers_3/StaticBody3D"]
+[node name="Pokoj3_szafka_nocna" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_DeskDrawers_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.214486)
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_DeskDrawers_3/StaticBody3D/Pokoj3_szafka_nocna"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_DeskDrawers_3/StaticBody3D/Pokoj3_szafka_nocna"]
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Furniture_Cabinet_6" type="MeshInstance3D" parent="Meble/Pokoj3"]
+[node name="Furniture_Cabinet_6" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3"]
 transform = Transform3D(-4.47035e-07, 0, 1, 0, 1, 0, -1, 0, -4.47035e-07, 2.71557, 3.08268, -10.6497)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_w015c")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_5_Doors_1" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_Cabinet_6"]
+[node name="Furniture_Cabinet_5_Doors_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.457632, 0.0508741, 0.321291)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_yu104")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_5_Doors_2" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_Cabinet_6"]
+[node name="Furniture_Cabinet_5_Doors_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457632, 0.0508743, 0.321293)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_x0qtr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj3/Furniture_Cabinet_6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Cabinet_6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00447464, 0.0486867, 0.0696154)
 shape = SubResource("BoxShape3D_k1kuo")
 
-[node name="Pokoj3_komoda" type="Area3D" parent="Meble/Pokoj3/Furniture_Cabinet_6/StaticBody3D"]
+[node name="Pokoj3_komoda" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_6/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Cabinet_6/StaticBody3D/Pokoj3_komoda"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_6/StaticBody3D/Pokoj3_komoda"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00447452, 0.0486867, 0.356143)
 shape = SubResource("BoxShape3D_k1kuo")
 
-[node name="Furniture_Cabinet_8" type="MeshInstance3D" parent="Meble/Pokoj3"]
+[node name="Furniture_Cabinet_8" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3"]
 transform = Transform3D(0.999554, 0, -0.0298579, 0, 1, 0, 0.0298579, 0, 0.999554, 3.27113, 3.51674, -16.4906)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vptm6")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_3_Door" type="MeshInstance3D" parent="Meble/Pokoj3/Furniture_Cabinet_8"]
+[node name="Furniture_Cabinet_3_Door" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248681, -0.0723481, 0.302918)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_47rx0")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj3/Furniture_Cabinet_8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248681, -0.0723481, 0.302918)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Cabinet_8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251887, 0.229441, -0.277063)
 shape = SubResource("BoxShape3D_a6s2t")
 
-[node name="Pokoj3_szafka_wysoka" type="Area3D" parent="Meble/Pokoj3/Furniture_Cabinet_8/StaticBody3D"]
+[node name="Pokoj3_szafka_wysoka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_8/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj3/Furniture_Cabinet_8/StaticBody3D/Pokoj3_szafka_wysoka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj3/Furniture_Cabinet_8/StaticBody3D/Pokoj3_szafka_wysoka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251887, 0.229441, -0.00475645)
 shape = SubResource("BoxShape3D_a6s2t")
 
-[node name="Pokoj4" type="Node3D" parent="Meble"]
+[node name="Pokoj4" type="Node3D" parent="NavigationRegion3D/Meble"]
 
-[node name="Furniture_Cabinet_4" type="MeshInstance3D" parent="Meble/Pokoj4"]
+[node name="Furniture_Cabinet_4" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4"]
 transform = Transform3D(-4.56976e-07, 0, 1, 0, 1, 0, -1, 0, -4.56976e-07, -7.13387, 0.596135, -13.0963)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ca3s5")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_1" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860319, 0.300813, 0.103338)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_3yuii")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_2" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860319, -0.00129819, 0.103338)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_q7aqi")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_3" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_3" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860319, -0.303409, 0.103338)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_nb16x")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_4" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_4" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12626e-05, 0.294915, 0.147982)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_j4gn3")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_5" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_5" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12626e-05, -0.00719571, 0.147982)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ddouj")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_6" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_6" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12626e-05, -0.309307, 0.147982)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_t4g5n")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_7" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_7" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86033, 0.300813, 0.103339)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_77k06")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_8" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_8" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86033, -0.00129819, 0.103339)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_axvm8")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_4_Drawers_9" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="Furniture_Cabinet_4_Drawers_9" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86033, -0.303409, 0.103339)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_je3mq")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj4/Furniture_Cabinet_4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj4/Furniture_Cabinet_4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-08, 0, 0.0518656)
 shape = SubResource("BoxShape3D_rp32f")
 
-[node name="Pokoj4_komoda" type="Area3D" parent="Meble/Pokoj4/Furniture_Cabinet_4/StaticBody3D"]
+[node name="Pokoj4_komoda" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj4/Furniture_Cabinet_4/StaticBody3D/Pokoj4_komoda"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_4/StaticBody3D/Pokoj4_komoda"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78814e-07, 0, 0.325472)
 shape = SubResource("BoxShape3D_rp32f")
 
-[node name="Furniture_Shelf_2" type="MeshInstance3D" parent="Meble/Pokoj4"]
+[node name="Furniture_Shelf_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4"]
 transform = Transform3D(0.323323, 0, 0.946289, 0, 1, 0, -0.946289, 0, 0.323323, -6.75416, 1.18459, -15.5706)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ipafh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj4/Furniture_Shelf_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Shelf_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj4/Furniture_Shelf_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Shelf_2/StaticBody3D"]
 shape = SubResource("BoxShape3D_1rvpu")
 
-[node name="Pokoj4_polka" type="Area3D" parent="Meble/Pokoj4/Furniture_Shelf_2/StaticBody3D"]
+[node name="Pokoj4_polka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Shelf_2/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj4/Furniture_Shelf_2/StaticBody3D/Pokoj4_polka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Shelf_2/StaticBody3D/Pokoj4_polka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0, 0.275119)
 shape = SubResource("BoxShape3D_1rvpu")
 
-[node name="Furniture_Cabinet_3" type="MeshInstance3D" parent="Meble/Pokoj4"]
+[node name="Furniture_Cabinet_3" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4"]
 transform = Transform3D(0.801661, 0, -0.597779, 0, 1, 0, 0.597779, 0, 0.801661, -3.35326, 1.00923, -16.4122)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vptm6")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_3_Door" type="MeshInstance3D" parent="Meble/Pokoj4/Furniture_Cabinet_3"]
+[node name="Furniture_Cabinet_3_Door" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248681, -0.0723481, 0.302918)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_47rx0")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj4/Furniture_Cabinet_3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248681, -0.0723481, 0.302918)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj4/Furniture_Cabinet_3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251887, 0.229441, -0.277063)
 shape = SubResource("BoxShape3D_a6s2t")
 
-[node name="Pokoj4_szafka_wysoka" type="Area3D" parent="Meble/Pokoj4/Furniture_Cabinet_3/StaticBody3D"]
+[node name="Pokoj4_szafka_wysoka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_3/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj4/Furniture_Cabinet_3/StaticBody3D/Pokoj4_szafka_wysoka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj4/Furniture_Cabinet_3/StaticBody3D/Pokoj4_szafka_wysoka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251886, 0.229441, -0.00475621)
 shape = SubResource("BoxShape3D_a6s2t")
 
-[node name="Pokoj5" type="Node3D" parent="Meble"]
+[node name="Pokoj5" type="Node3D" parent="NavigationRegion3D/Meble"]
 
-[node name="Furniture_Chair_2" type="MeshInstance3D" parent="Meble/Pokoj5"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.32588, 0.624418, -14.4463)
+[node name="Furniture_Chair_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.11767, 0.624418, -14.4463)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Chair_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Chair_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Shelf_4" type="MeshInstance3D" parent="Meble/Pokoj5"]
+[node name="Furniture_Shelf_4" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
 transform = Transform3D(-3.27843e-07, 0, 1.00005, 0, 1.00005, 0, -1.00005, 0, -3.27843e-07, -2.13688, 1.17865, -10.4981)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_oaveu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Shelf_4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Shelf_4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Shelf_4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Shelf_4/StaticBody3D"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_lsqpe")
 
-[node name="Pokoj5_polka" type="Area3D" parent="Meble/Pokoj5/Furniture_Shelf_4/StaticBody3D"]
+[node name="Pokoj5_polka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Shelf_4/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Shelf_4/StaticBody3D/Pokoj5_polka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Shelf_4/StaticBody3D/Pokoj5_polka"]
 transform = Transform3D(1, 0, 1.42109e-13, 0, 1, 0, -1.42109e-13, 0, 1, 0, 0, 0.263428)
 shape = SubResource("BoxShape3D_lsqpe")
 
-[node name="Furniture_Chair_3" type="MeshInstance3D" parent="Meble/Pokoj5"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.32113, 0.587119, -13.4942)
+[node name="Furniture_Chair_3" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.08848, 0.587119, -13.4942)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Chair_3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Chair_3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Chair_4" type="MeshInstance3D" parent="Meble/Pokoj5"]
+[node name="Furniture_Chair_4" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -1, 0, -8.74228e-08, -0.28091, 0.624418, -13.4942)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Chair_4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Chair_4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Chair_5" type="MeshInstance3D" parent="Meble/Pokoj5"]
+[node name="Furniture_Chair_5" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -1, 0, -8.74228e-08, -0.276162, 0.587119, -14.4463)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_1okio")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Chair_5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Chair_5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Chair_5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0573351)
 shape = SubResource("BoxShape3D_rbs5d")
 
-[node name="Furniture_Table_1" type="MeshInstance3D" parent="Meble/Pokoj5"]
+[node name="Furniture_Table_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.470282, 0.774538, -13.993)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_xk8fn")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Table_1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Table_1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Table_1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Table_1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0165539, -0.293996, 0)
 shape = SubResource("BoxShape3D_olliu")
 
-[node name="Furniture_Cabinet_7" type="MeshInstance3D" parent="Meble/Pokoj5"]
+[node name="Furniture_Cabinet_7" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5"]
 transform = Transform3D(0.784895, 0, 0.619629, 0, 1, 0, -0.619629, 0, 0.784895, -2.02889, 1.01205, -16.1751)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vptm6")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_3_Door" type="MeshInstance3D" parent="Meble/Pokoj5/Furniture_Cabinet_7"]
+[node name="Furniture_Cabinet_3_Door" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Cabinet_7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248681, -0.0723481, 0.302918)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_47rx0")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj5/Furniture_Cabinet_7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Cabinet_7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248681, -0.0723481, 0.302918)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Cabinet_7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Cabinet_7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251887, 0.229441, -0.277063)
 shape = SubResource("BoxShape3D_a6s2t")
 
-[node name="Pokoj5_szafka_wysoka" type="Area3D" parent="Meble/Pokoj5/Furniture_Cabinet_7/StaticBody3D"]
+[node name="Pokoj5_szafka_wysoka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Cabinet_7/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj5/Furniture_Cabinet_7/StaticBody3D/Pokoj5_szafka_wysoka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj5/Furniture_Cabinet_7/StaticBody3D/Pokoj5_szafka_wysoka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251887, 0.229441, -0.00475597)
 shape = SubResource("BoxShape3D_a6s2t")
 
-[node name="Pokoj6" type="Node3D" parent="Meble"]
+[node name="Pokoj6" type="Node3D" parent="NavigationRegion3D/Meble"]
 
-[node name="Furniture_Cabinet_5" type="MeshInstance3D" parent="Meble/Pokoj6"]
+[node name="Furniture_Cabinet_5" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6"]
 transform = Transform3D(3.69553e-07, 0, -1, 0, 1, 0, 1, 0, 3.69553e-07, 6.94409, 0.529343, -13.4803)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_w015c")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_5_Doors_1" type="MeshInstance3D" parent="Meble/Pokoj6/Furniture_Cabinet_5"]
+[node name="Furniture_Cabinet_5_Doors_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Cabinet_5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.457632, 0.0508741, 0.321291)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_yu104")
 skeleton = NodePath("")
 
-[node name="Furniture_Cabinet_5_Doors_2" type="MeshInstance3D" parent="Meble/Pokoj6/Furniture_Cabinet_5"]
+[node name="Furniture_Cabinet_5_Doors_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Cabinet_5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457632, 0.0508743, 0.321293)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_x0qtr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj6/Furniture_Cabinet_5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Cabinet_5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj6/Furniture_Cabinet_5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Cabinet_5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00447464, 0.0486867, 0.0696154)
 shape = SubResource("BoxShape3D_k1kuo")
 
-[node name="Pokoj6_komoda1" type="Area3D" parent="Meble/Pokoj6/Furniture_Cabinet_5/StaticBody3D"]
+[node name="Pokoj6_komoda1" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Cabinet_5/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj6/Furniture_Cabinet_5/StaticBody3D/Pokoj6_komoda1"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Cabinet_5/StaticBody3D/Pokoj6_komoda1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00447452, 0.0486867, 0.356143)
 shape = SubResource("BoxShape3D_k1kuo")
 
-[node name="Furniture_Shelf_5" type="MeshInstance3D" parent="Meble/Pokoj6"]
+[node name="Furniture_Shelf_5" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6"]
 transform = Transform3D(1, 0, 4.76837e-07, 0, 1.5918, 0, -4.76837e-07, 0, 1, 6.47687, 1.11004, -16.1235)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_5wih2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj6/Furniture_Shelf_5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Shelf_5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj6/Furniture_Shelf_5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Shelf_5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00521874, 0, -5.96046e-08)
 shape = SubResource("BoxShape3D_evd2s")
 
-[node name="Pokoj6_polka" type="Area3D" parent="Meble/Pokoj6/Furniture_Shelf_5/StaticBody3D"]
+[node name="Pokoj6_polka" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Shelf_5/StaticBody3D"]
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj6/Furniture_Shelf_5/StaticBody3D/Pokoj6_polka"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_Shelf_5/StaticBody3D/Pokoj6_polka"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00521851, 0, 0.338013)
 shape = SubResource("BoxShape3D_evd2s")
 
-[node name="Furniture_DeskDrawers_4" type="MeshInstance3D" parent="Meble/Pokoj6"]
+[node name="Furniture_DeskDrawers_4" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6"]
 transform = Transform3D(-6.28371e-07, 0, 1, 0, 1, 0, -2.22724, 0, -2.8213e-07, 2.70373, 0.500258, -10.7333)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_8fjif")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="Meble/Pokoj6/Furniture_DeskDrawers_4"]
+[node name="Furniture_DeskDrawers_1_Draw_1" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_DeskDrawers_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86063e-05, 0.183082, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_01806")
 skeleton = NodePath("")
 
-[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="Meble/Pokoj6/Furniture_DeskDrawers_4"]
+[node name="Furniture_DeskDrawers_1_Draw_2" type="MeshInstance3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_DeskDrawers_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86685e-05, -0.279268, 0.0953341)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_2w2yk")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meble/Pokoj6/Furniture_DeskDrawers_4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_DeskDrawers_4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meble/Pokoj6/Furniture_DeskDrawers_4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_DeskDrawers_4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0408683)
 shape = SubResource("BoxShape3D_qceuj")
 
-[node name="Pokoj6_komoda2" type="Area3D" parent="Meble/Pokoj6/Furniture_DeskDrawers_4/StaticBody3D"]
+[node name="Pokoj6_komoda2" type="Area3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_DeskDrawers_4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.10462)
 
-[node name="for_interaction" type="CollisionShape3D" parent="Meble/Pokoj6/Furniture_DeskDrawers_4/StaticBody3D/Pokoj6_komoda2"]
+[node name="for_interaction" type="CollisionShape3D" parent="NavigationRegion3D/Meble/Pokoj6/Furniture_DeskDrawers_4/StaticBody3D/Pokoj6_komoda2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 0.214486)
 shape = SubResource("BoxShape3D_qceuj")
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Marker1NPC1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60406, 0, 0.499774)
+
+[node name="Marker2NPC1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71718, 0, -4.18975)
+
+[node name="Marker3NPC1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07925, 2.5, 0.643315)
+
+[node name="Marker4NPC1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -3.65661)
