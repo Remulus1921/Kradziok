@@ -12,12 +12,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var playback = AnimTree.get("parameters/playback")
 @onready var player_mesh = get_node("Player")
 
-@onready var Door1floorMiddle = $"../NavigationRegion3D/p2/doorMiddle"
-@onready var Door1floorRight = $"../NavigationRegion3D/p2/doorRight"
-@onready var Door0floorMiddle = $"../NavigationRegion3D/p1/doorMiddle"
-@onready var Door0floorRight = $"../NavigationRegion3D/p1/doorRight"
-@onready var DoorExit = $"../NavigationRegion3D/p1/doorExit"
-
+@onready var Door1floorMiddle = $"../p2/doorMiddle"
+@onready var Door1floorRight = $"../p2/doorRight"
+@onready var Door0floorMiddle = $"../p1/doorMiddle"
+@onready var Door0floorRight = $"../p1/doorRight"
+@onready var DoorExit = $"../p1/doorExit"
+@onready var Meble = $"../Meble"
 
 var FloorHeight = 2.5
 var Floor0 = 0
@@ -27,11 +27,14 @@ var state_factory
 var ShiftLeft = -0.2
 var ShiftRight = 0.2
 var isOutside = true
-var spotted = true
+var interactedWithMebel
+var meble = []
 
 func _ready():
 	state_factory = StateFactory.new()
 	change_state("idle")
+	get_furniture_meshes()
+	interactedWithMebel = false
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -43,6 +46,7 @@ func _physics_process(delta):
 	direction = direction.rotated(Vector3.UP, h_rot).normalized()
 	run_door_interaction()
 	move_and_slide()
+	check_interactions()
 	
 func change_state(new_state_name):
 	if state != null:
@@ -89,3 +93,33 @@ func run_door_interaction():
 	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1)
 	enterHouse(DoorExit)
 	exitHouse(DoorExit)
+	
+func get_furniture_meshes():
+	var pokoje = Meble.get_children()
+	for pokoj in pokoje:
+		if pokoj is Node3D:
+			var mebleWpokoju = pokoj.get_children()
+			print(mebleWpokoju)
+			for mebelMesh in mebleWpokoju:
+				if mebelMesh is MeshInstance3D:
+					var mebel = mebelMesh.get_children()
+					for mebelStatic in mebel:
+						if mebelStatic is StaticBody3D:
+							var mebelArea = mebelStatic.get_children()
+							for Area in mebelArea:
+									if Area and Area is Area3D:
+										print("\nArea for collision", Area)
+										Area.add_to_group("interactable")
+										meble.append(Area)
+	
+func check_interactions():
+	for mebelArea in meble:
+		if mebelArea.is_in_group("interactable") and mebelArea.overlaps_area(self.find_child("Area3D",false,true)):
+			if not interactedWithMebel:
+				print("Podszedłeś do mebla: ", mebelArea)
+				interactedWithMebel = true
+			else:
+				interactedWithMebel = false
+		
+			# Tutaj możesz umieścić kod obsługi interakcji, np. podświetlenie mebla
+			# highlight_mebel(mebelArea, true)
