@@ -12,11 +12,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var playback = AnimTree.get("parameters/playback")
 @onready var player_mesh = get_node("Player")
 
-@onready var Door1floorMiddle = $"../p2/doorMiddle"
-@onready var Door1floorRight = $"../p2/doorRight"
-@onready var Door0floorMiddle = $"../p1/doorMiddle"
-@onready var Door0floorRight = $"../p1/doorRight"
-@onready var DoorExit = $"../p1/doorExit"
+@onready var Door1floorMiddle = $"../NavigationRegion3D/p2/doorMiddle"
+@onready var Door1floorRight = $"../NavigationRegion3D/p2/doorRight"
+@onready var Door0floorMiddle = $"../NavigationRegion3D/p1/doorMiddle"
+@onready var Door0floorRight = $"../NavigationRegion3D/p1/doorRight"
+@onready var DoorExit = $"../NavigationRegion3D/p1/doorExit"
 
 
 var FloorHeight = 2.5
@@ -27,6 +27,7 @@ var state_factory
 var ShiftLeft = -0.2
 var ShiftRight = 0.2
 var isOutside = true
+var spotted = true
 
 func _ready():
 	state_factory = StateFactory.new()
