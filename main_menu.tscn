@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbp8yuxfimk4e"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_nlqx5"]
-[ext_resource type="Texture2D" uid="uid://d4artpd4pk72a" path="res://tloMenu.jpg" id="2_2gubt"]
+[ext_resource type="Texture2D" uid="uid://c8wjopcyli6kv" path="res://tloMenu.png" id="2_xqnuf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -138,13 +138,20 @@ bus = &"Sound"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 2112.0
+offset_bottom = 1212.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.43, 0.43)
 mouse_filter = 2
-texture = ExtResource("2_2gubt")
+texture = ExtResource("2_xqnuf")
 
 [connection signal="pressed" from="MarginContainer/Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
