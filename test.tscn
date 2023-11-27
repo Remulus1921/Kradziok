@@ -7,11 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dkwt0dqr8adl1" path="res://game_menu.tscn" id="2_hmntr"]
 [ext_resource type="PackedScene" uid="uid://bngf1wk7fbqp6" path="res://ending_scene.tscn" id="3_hj63t"]
 [ext_resource type="PackedScene" uid="uid://pn78mgyeddrk" path="res://player/player.tscn" id="6_t6ukb"]
-[ext_resource type="Texture2D" uid="uid://72n8s24cuivb" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
-[ext_resource type="Texture2D" uid="uid://43ospivcbbb3" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
-[ext_resource type="Texture2D" uid="uid://llufgvkmxfr2" path="res://assets/Models/GLTF format/door_typeB_doors.png" id="9_ps4cx"]
-[ext_resource type="Texture2D" uid="uid://b1en5up4k6moi" path="res://assets/Models/GLTF format/door_typeB_metal.png" id="10_xbcly"]
-[ext_resource type="PackedScene" uid="uid://b2mhl55ake50a" path="res://npc_1.tscn" id="12_4y636"]
+[ext_resource type="Texture2D" uid="uid://blaf7fhdb71pr" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
+[ext_resource type="Texture2D" uid="uid://cqxmxiy7w3j5q" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
+[ext_resource type="Texture2D" uid="uid://cchg201l5uitj" path="res://assets/Models/GLTF format/door_typeB_doors.png" id="9_ps4cx"]
+[ext_resource type="Texture2D" uid="uid://dhooktoaqjdah" path="res://assets/Models/GLTF format/door_typeB_metal.png" id="10_xbcly"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s0wwr"]
 sky_top_color = Color(0.133333, 0.831373, 0.784314, 1)
@@ -99,10 +98,6 @@ _surfaces = [{
 "vertex_count": 6,
 "vertex_data": PackedByteArray(0, 0, 0, 191, 205, 204, 204, 62, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 208, 204, 204, 62, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 208, 204, 204, 190, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 208, 204, 204, 190, 255, 255, 255, 127, 255, 255, 255, 255, 0, 0, 0, 63, 0, 0, 0, 0, 208, 204, 204, 62, 255, 255, 255, 127, 255, 255, 255, 255, 0, 0, 0, 63, 205, 204, 204, 62, 0, 0, 0, 0, 255, 255, 255, 127, 255, 255, 255, 255)
 }]
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_rycyy"]
-vertices = PackedVector3Array(3.18974, 0.5, 2.5655, 6.43974, 0.5, 2.5655, 6.68974, 0.5, 0.815497, 3.18974, 0.5, 0.0654974, -1.81026, 0.5, -1.6845, -3.06026, 0.5, -1.4345, -3.06026, 0.5, -0.184503, -1.81026, 0.5, 0.0654974, 1.93974, 0.5, -0.184503, 1.93974, 0.5, -1.4345, 6.68974, 0.5, -3.6845, 3.18974, 0.5, -3.6845, 3.18974, 0.5, -1.6845, 1.68974, 0.5, -3.6845, -1.81026, 0.5, -3.6845, -1.81026, 0.5, -1.6845, 1.93974, 0.5, -1.4345, 3.18974, 0.5, -1.6845, 1.93974, 0.5, -1.4345, 1.93974, 0.5, -0.184503, 3.18974, 0.5, 0.0654974, -1.81026, 0.5, 0.0654974, -1.81026, 0.5, 2.5655, 1.68974, 0.5, 2.5655, 1.93974, 0.5, -0.184503, -3.31026, 0.5, -3.6845, -6.81026, 0.5, -3.6845, -6.81026, 0.5, 2.5655, -3.31026, 0.5, 2.5655, -3.06026, 0.5, -0.184503, -3.06026, 0.5, -1.4345, 6.68974, 0.5, 0.815497, 6.68974, 0.5, -3.6845, 3.18974, 0.5, -1.6845, 3.18974, 0.5, 0.0654974, -1.81026, 3, -2.4345, -1.81026, 3, 2.5655, 1.68974, 3, 2.5655, 1.68974, 3, -3.6845, -6.81026, 3, 2.5655, -3.31026, 3, 2.5655, -3.06026, 3, -2.6845, -6.81026, 3, -3.6845, -3.06026, 3, -2.6845, -1.81026, 3, -2.4345, 1.68974, 3, -3.6845, -6.81026, 3, -3.6845, 3.18974, 3, -3.6845, 3.18974, 3, 2.5655, 6.68974, 3, 2.5655, 6.68974, 3, -3.6845)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(12, 11, 10), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 24), PackedInt32Array(30, 29, 25), PackedInt32Array(25, 29, 26), PackedInt32Array(26, 29, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(50, 49, 47), PackedInt32Array(47, 49, 48)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ptn5"]
 resource_name = "wall_lines"
@@ -1382,9 +1377,6 @@ script = ExtResource("1_ai7kr")
 [node name="ending_scene" parent="." instance=ExtResource("3_hj63t")]
 visible = false
 
-[node name="lost_scene" parent="." instance=ExtResource("4_5vvgn")]
-visible = false
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48ws8")
 
@@ -1422,505 +1414,505 @@ transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08,
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA2" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA2" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA8" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA8" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA5" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA5" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA6" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA6" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -1.46699, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA7" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA7" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 1.04289, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA4" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA4" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA14" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA14" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA14"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA14/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA15" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA15" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA15"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA16" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA16" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 3.56243, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA16"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA16/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA16/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA17" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA17" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 6.07231, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA17"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA17/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA9" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA9" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA10" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA10" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA11" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA11" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA12" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA12" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -6.47723, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA12"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA13" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="wallA13" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -3.96735, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/wallA13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/wallA13"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/wallA13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/wallA13/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="doorRight" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="doorRight" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 4.83364, 0.080146, -4.38012)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/doorRight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/doorRight"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/doorRight/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/doorRight/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="doorExit" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="doorExit" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 3, 0, 2, 0, -8.74228e-08, 7.16925, 0.080146, 1.68304)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/doorExit"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/doorExit"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/doorExit/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/doorExit/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="door_typeB5" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="door_typeB5" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 3, 0, -2, 0, -8.74228e-08, 7.51067, 0.080146, 1.68304)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/door_typeB5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/door_typeB5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/door_typeB5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/door_typeB5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="doorMiddle" type="MeshInstance3D" parent="NavigationRegion3D/p1"]
+[node name="doorMiddle" type="MeshInstance3D" parent="p1"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -0.211138, 0.080146, -4.34655)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/doorMiddle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/doorMiddle"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/doorMiddle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/doorMiddle/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/p1"]
+[node name="CSGBox3D" type="CSGBox3D" parent="p1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0226498, 0.0203238, -0.58725)
 size = Vector3(14.9898, 0.02, 7.52056)
 material = SubResource("StandardMaterial3D_3k5s2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p1/CSGBox3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p1/CSGBox3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p1/CSGBox3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p1/CSGBox3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0184334, 0)
 shape = SubResource("BoxShape3D_d2u5r")
 
-[node name="p2" type="Node3D" parent="NavigationRegion3D"]
+[node name="p2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 
-[node name="wallA3" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA3" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA2" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA2" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, -0.770099)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA18" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA18" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 2.32498, 0, 1.70017)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA18"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA18"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA18/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA18/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA8" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA8" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA5" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA5" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -2.67502, 0, -0.772346)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA6" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA6" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -1.46699, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA7" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA7" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 1.04289, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA4" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA4" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA14" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA14" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA14"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA14/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA15" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA15" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, 7.3544, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA15"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA16" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA16" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 3.56243, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA16"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA16/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA16/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA17" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA17" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, 6.07231, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA17"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA17/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA9" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA9" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -0.74949)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA10" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA10" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, 1.71536)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA11" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA11" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(-1.09278e-07, 0, 0.25, 0, 2.5, 0, -2.5, 0, -1.09278e-08, -7.68526, 0, -3.2594)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA12" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA12" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -6.47723, 0, -4.55309)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA12"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="wallA13" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="wallA13" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2.49997, 0, -0.0012828, 0, 2.5, 0, 0.0128279, 0, 0.249997, -3.96735, 0, -4.54021)
 mesh = SubResource("ArrayMesh_6soam")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/wallA13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/wallA13"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/wallA13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/wallA13/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506501, 0)
 shape = SubResource("BoxShape3D_nkd8i")
 
-[node name="doorRight" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="doorRight" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 4.83364, 0.080146, -4.38012)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/doorRight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/doorRight"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/doorRight/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/doorRight/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="doorMiddle" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="doorMiddle" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -0.211138, 0.0801461, -4.41012)
 mesh = SubResource("ArrayMesh_odg4x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/doorMiddle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/doorMiddle"]
 
-[node name="doorcolission" type="CollisionShape3D" parent="NavigationRegion3D/p2/doorMiddle/StaticBody3D"]
+[node name="doorcolission" type="CollisionShape3D" parent="p2/doorMiddle/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315895, 0)
 shape = SubResource("BoxShape3D_tva1c")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/p2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0226498, 0.0203238, -0.58725)
 size = Vector3(14.9898, 0.02, 7.52056)
 material = SubResource("StandardMaterial3D_3k5s2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/CSGBox3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/CSGBox3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/CSGBox3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/CSGBox3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0184334, 0)
 shape = SubResource("BoxShape3D_d2u5r")
 
-[node name="middle1floorWindow" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="middle1floorWindow" type="MeshInstance3D" parent="p2"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/middle1floorWindow"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/middle1floorWindow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/middle1floorWindow/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/middle1floorWindow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="middle1floorWindow2" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="middle1floorWindow2" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04052, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/middle1floorWindow2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/middle1floorWindow2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/middle1floorWindow2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/middle1floorWindow2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="middle1floorWindow3" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="middle1floorWindow3" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01759, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/middle1floorWindow3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/middle1floorWindow3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/middle1floorWindow3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/middle1floorWindow3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="0floorWindow" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="0floorWindow" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01759, -2.52633, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/0floorWindow"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/0floorWindow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/0floorWindow/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/0floorWindow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="0floorWindow2" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="0floorWindow2" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0317907, -2.52633, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/0floorWindow2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/0floorWindow2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/0floorWindow2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/0floorWindow2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
-[node name="0floorWindow3" type="MeshInstance3D" parent="NavigationRegion3D/p2"]
+[node name="0floorWindow3" type="MeshInstance3D" parent="p2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02128, -2.52633, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/p2/0floorWindow3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="p2/0floorWindow3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/p2/0floorWindow3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="p2/0floorWindow3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162149, 1.27416, 2.78403)
 shape = SubResource("BoxShape3D_rddpt")
 
