@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbp8yuxfimk4e"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_nlqx5"]
-[ext_resource type="Texture2D" uid="uid://d4artpd4pk72a" path="res://tloMenu.jpg" id="2_2gubt"]
+[ext_resource type="Texture2D" uid="uid://dyu2gdgcfwrb4" path="res://menuBackground.png" id="2_xfh68"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -144,7 +144,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_2gubt")
+texture = ExtResource("2_xfh68")
+expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
