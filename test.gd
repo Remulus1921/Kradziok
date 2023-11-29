@@ -28,6 +28,7 @@ func pauseMenu():
 		Engine.time_scale = 0
 	paused = !paused
 
+
 func endingGame():
 	if endGame == true:
 		if lost == true:
