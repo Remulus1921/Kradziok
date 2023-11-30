@@ -1414,7 +1414,7 @@ transform = Transform3D(-3.27835e-07, 0, 16, 0, 5, 0, -7.5, 0, -6.99382e-07, -0.
 mesh = SubResource("ArrayMesh_mm6l3")
 
 [node name="Player" parent="." instance=ExtResource("6_t6ukb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2736, 0.237082, 2.36821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.585, 0, 1.444)
 
 [node name="NPC1" parent="." instance=ExtResource("8_rhr2u")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
@@ -2585,4 +2585,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71718, 0, -4.18975)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07925, 2.5, 0.643315)
 
 [node name="Marker4NPC1" type="Marker3D" parent="Markers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -3.65661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.274182, 2.5, -4.11152)
+
+[node name="Marker5NPC1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76982, 0, -4.33842)
+
+[node name="Marker6NPC1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79165, 2.5, -4.3104)

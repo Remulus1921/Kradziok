@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var playback = AnimTree.get("parameters/playback")
 @onready var player_mesh = get_node("Player")
 
+@onready var test = $"../"
 @onready var Door1floorMiddle = $"../NavigationRegion3D/p2/doorMiddle"
 @onready var Door1floorRight = $"../NavigationRegion3D/p2/doorRight"
 @onready var Door0floorMiddle = $"../NavigationRegion3D/p1/doorMiddle"
@@ -30,6 +31,7 @@ var isOutside = true
 var interactedWithMebel
 var meble = []
 
+var onFloor0 = true;
 var spotted = false;
 
 func _ready():
@@ -49,7 +51,6 @@ func _physics_process(delta):
 	run_door_interaction()
 	move_and_slide()
 	check_interactions()
-	
 func change_state(new_state_name):
 	if state != null:
 		state.exit()
@@ -63,7 +64,7 @@ func change_state(new_state_name):
 	add_child(state)
 	
 		
-func door_interaction(From, To, ActuallFloor, Floor):
+func door_interaction(From, To, ActuallFloor, Floor, whichFloor):
 	if ((self.position.x >= From.position.x - 1 and self.position.x <= From.position.x + 1)
 	and (self.position.y > ActuallFloor and self.position.y < ActuallFloor + FloorHeight)
 	and (self.position.z >= From.position.z - 1 and self.position.z <= From.position.z + 1)):
@@ -71,7 +72,7 @@ func door_interaction(From, To, ActuallFloor, Floor):
 		self.position.y = Floor
 		self.position.z = To.position.z + 2
 		self.rotation.y = 180	
-		
+		onFloor0 = whichFloor
 func exitHouse(Door):
 	if(isOutside):
 		return
@@ -79,7 +80,9 @@ func exitHouse(Door):
 	if(self.position.x < Door.position.x - 1 and self.position.x > Door.position.x - 1.1):
 		self.position.x = Door.position.x + 1.11 #TO MUSI BYC WIEKSZE NIZ WARUNEK
 		isOutside = true
-		
+		test.lost = false
+		test.endGame = true
+
 func enterHouse(Door):
 	if(!isOutside):
 		return
@@ -89,10 +92,10 @@ func enterHouse(Door):
 		isOutside = false
 
 func run_door_interaction():
-	door_interaction(Door0floorMiddle, Door1floorMiddle, Floor0, Floor1)
-	door_interaction(Door1floorMiddle, Door0floorMiddle, Floor1, Floor0)
-	door_interaction(Door1floorRight, Door0floorRight, Floor1, Floor0)
-	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1)
+	door_interaction(Door0floorMiddle, Door1floorMiddle, Floor0, Floor1, false)
+	door_interaction(Door1floorMiddle, Door0floorMiddle, Floor1, Floor0, true)
+	door_interaction(Door1floorRight, Door0floorRight, Floor1, Floor0, true)
+	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1, false)
 	enterHouse(DoorExit)
 	exitHouse(DoorExit)
 	

@@ -23,6 +23,7 @@ var FloorHeight = 2.5
 var Floor0 = 0
 var Floor1 = 2.5
 var whereToGo = 0;
+var onFloor0 = true;
 
 var state
 var state_factory
@@ -39,27 +40,44 @@ func _physics_process(delta):
 			nav.target_position = markers.get_child(0).global_position
 			self.get_position_delta()
 			if self.position.x - markers.get_child(0).global_position.x < 0.3 && self.position.x - markers.get_child(0).global_position.x > -0.3 && self.position.y - markers.get_child(0).global_position.y < 0.3 && self.position.y - markers.get_child(0).global_position.y > -0.3 && self.position.z - markers.get_child(0).global_position.z < 0.3 && self.position.z - markers.get_child(0).global_position.z > -0.3:
-				whereToGo = 1
+				whereToGo = whereToGo + 1
 		elif whereToGo == 1:
 			nav.target_position = markers.get_child(1).global_position
 			self.get_position_delta()
 		elif whereToGo == 2:
-			print (self.position)
 			nav.target_position = markers.get_child(2).global_position
 			self.get_position_delta()
 			if self.position.x - markers.get_child(2).global_position.x < 0.3 && self.position.x - markers.get_child(2).global_position.x > -0.3 && self.position.y - markers.get_child(2).global_position.y < 0.3 && self.position.y - markers.get_child(2).global_position.y > -0.3 && self.position.z - markers.get_child(2).global_position.z < 0.3 && self.position.z - markers.get_child(2).global_position.z > -0.3:
-				whereToGo = 3
+				whereToGo = whereToGo + 1
 		elif whereToGo == 3:
 			nav.target_position = markers.get_child(3).global_position
 			self.get_position_delta()
 	else:
 		SPEED = 2.8
-		nav.target_position = player.global_position
+		if onFloor0 == true && player.onFloor0 == false:
+			if player.position.x > 2.36:
+				nav.target_position = markers.get_child(4).global_position
+			else:
+				nav.target_position = markers.get_child(1).global_position
+		elif onFloor0 == false && player.onFloor0 == true:
+			if self.position.x > 2.36:
+				nav.target_position = markers.get_child(5).global_position
+			else:
+				nav.target_position = markers.get_child(3).global_position
+		elif onFloor0 == false && player.onFloor0 == false:
+			if self.position.x < 2.36 && player.position.x > 2.36:
+				nav.target_position = markers.get_child(3).global_position
+			elif self.position.x > 2.36 && player.position.x < 2.36:
+				nav.target_position = markers.get_child(5).global_position
+			else:
+				nav.target_position = player.global_position
+		else:
+			nav.target_position = player.global_position
 	direction = nav.get_next_path_position() - global_position
 	run_door_interaction()
 	
 	velocity = velocity.lerp(direction*SPEED, SPEED*delta)
-	if velocity.x != 0 || velocity.z != 0 :
+	if (velocity.x > 0.1 || velocity.x < -0.1) || (velocity.z > 0.1 || velocity.z < -0.1):
 		if player.spotted == false:
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Walking")
 		else:
@@ -74,22 +92,21 @@ func _physics_process(delta):
 			test.endGame = true;
 	move_and_slide()
 
-func door_interaction(From, To, ActuallFloor, Floor, marker):
+func door_interaction(From, To, ActuallFloor, Floor, marker, whichFloor):
 	if ((self.position.x >= From.position.x - 1 and self.position.x <= From.position.x + 1)
 	and (self.position.y > ActuallFloor and self.position.y < ActuallFloor + FloorHeight)
 	and (self.position.z >= From.position.z - 1 and self.position.z <= From.position.z + 1)):
 		self.position.x = To.position.x
 		self.position.y = Floor
-		print("Wchodzę")
 		self.position.z = To.position.z + 2
-		print("Wychodzę")
 		whereToGo = marker
+		onFloor0 = whichFloor
 
 func run_door_interaction():
-	door_interaction(Door0floorMiddle, Door1floorMiddle, Floor0, Floor1, 2)
-	door_interaction(Door1floorMiddle, Door0floorMiddle, Floor1, Floor0, 0)
-	door_interaction(Door1floorRight, Door0floorRight, Floor1, Floor0, 0)
-	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1, 0)
+	door_interaction(Door0floorMiddle, Door1floorMiddle, Floor0, Floor1, 2, false)
+	door_interaction(Door1floorMiddle, Door0floorMiddle, Floor1, Floor0, 0, true)
+	door_interaction(Door1floorRight, Door0floorRight, Floor1, Floor0, 0, true)
+	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1, 0, false)
 
 #func checkFieldOfView():
 	#var objects = get_overlapping_bodies()
