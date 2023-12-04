@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://inventory/ItemInfo.gd" id="1_0rtha"]
 [ext_resource type="Texture2D" uid="uid://bd88r5wueul8v" path="res://icon.svg" id="1_rwg8p"]
 
+[sub_resource type="Animation" id="Animation_3jjf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1500)]
+}
+
 [sub_resource type="Animation" id="Animation_upe6v"]
 resource_name = "TransIn"
 tracks/0/type = "value"
@@ -20,21 +35,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_d1fay"]
 resource_name = "TransOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -1500)]
-}
-
-[sub_resource type="Animation" id="Animation_3jjf2"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,18 +66,18 @@ script = ExtResource("1_0rtha")
 offset_left = 384.0
 offset_top = 104.0
 offset_right = 704.0
-offset_bottom = 508.0
+offset_bottom = 604.0
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(544, 256)
+position = Vector2(544, 284)
 scale = Vector2(0.648438, 0.660156)
 texture = ExtResource("1_rwg8p")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 384.0
-offset_top = 120.0
+offset_top = 148.0
 offset_right = 704.0
-offset_bottom = 184.0
+offset_bottom = 212.0
 theme_override_font_sizes/font_size = 30
 text = "Item Name"
 horizontal_alignment = 1
@@ -86,9 +86,9 @@ autowrap_mode = 3
 
 [node name="Desc" type="Label" parent="."]
 offset_left = 384.0
-offset_top = 320.0
+offset_top = 348.0
 offset_right = 704.0
-offset_bottom = 410.0
+offset_bottom = 438.0
 theme_override_font_sizes/font_size = 30
 text = "Item Cost and Description"
 horizontal_alignment = 1
@@ -102,10 +102,27 @@ libraries = {
 }
 
 [node name="Close" type="Button" parent="."]
-offset_left = 488.0
-offset_top = 436.0
-offset_right = 600.0
-offset_bottom = 476.0
+offset_left = 591.0
+offset_top = 106.0
+offset_right = 703.0
+offset_bottom = 146.0
 text = "Zamknij"
 
+[node name="Take" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 492.0
+offset_right = 624.0
+offset_bottom = 542.0
+text = "Weź"
+
+[node name="Drop" type="Button" parent="."]
+visible = false
+offset_left = 464.0
+offset_top = 492.0
+offset_right = 624.0
+offset_bottom = 542.0
+text = "Odłóź"
+
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Take" to="." method="_on_take_pressed"]
+[connection signal="pressed" from="Drop" to="." method="_on_drop_pressed"]

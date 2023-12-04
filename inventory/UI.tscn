@@ -4,6 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://dohudmwu44dho" path="res://inventory/ItemInfo.tscn" id="1_wnqd8"]
 [ext_resource type="Script" path="res://inventory/InvContainer.gd" id="2_a2xj7"]
 
+[sub_resource type="Animation" id="Animation_k03fr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -650)]
+}
+
 [sub_resource type="Animation" id="Animation_un4rr"]
 resource_name = "TransIn"
 tracks/0/type = "value"
@@ -32,21 +47,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -650)]
-}
-
-[sub_resource type="Animation" id="Animation_k03fr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Inventory:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -650)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kcpop"]
