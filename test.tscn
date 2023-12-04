@@ -6,11 +6,11 @@
 [ext_resource type="Script" path="res://Camera3D.gd" id="2_bbnet"]
 [ext_resource type="PackedScene" uid="uid://dkwt0dqr8adl1" path="res://game_menu.tscn" id="2_hmntr"]
 [ext_resource type="PackedScene" uid="uid://bngf1wk7fbqp6" path="res://ending_scene.tscn" id="3_hj63t"]
-[ext_resource type="PackedScene" uid="uid://hsboex1c30wy" path="res://lost_scene.tscn" id="4_nlo55"]
+[ext_resource type="PackedScene" path="res://lost_scene.tscn" id="4_nlo55"]
 [ext_resource type="PackedScene" uid="uid://pn78mgyeddrk" path="res://player/player.tscn" id="6_t6ukb"]
 [ext_resource type="Texture2D" uid="uid://blaf7fhdb71pr" path="res://assets/Models/DAE format/Textures/wall_lines.png" id="6_v1dqs"]
 [ext_resource type="Texture2D" uid="uid://cqxmxiy7w3j5q" path="res://assets/Models/DAE format/Textures/concrete.png" id="7_0yh88"]
-[ext_resource type="PackedScene" uid="uid://db5477qd2pcgf" path="res://npc_1.tscn" id="8_rhr2u"]
+[ext_resource type="PackedScene" path="res://npc_1.tscn" id="8_rhr2u"]
 [ext_resource type="Texture2D" uid="uid://cchg201l5uitj" path="res://assets/Models/GLTF format/door_typeB_doors.png" id="9_ps4cx"]
 [ext_resource type="Texture2D" uid="uid://dhooktoaqjdah" path="res://assets/Models/GLTF format/door_typeB_metal.png" id="10_xbcly"]
 

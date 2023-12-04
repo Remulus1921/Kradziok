@@ -38,6 +38,7 @@ func _ready():
 	state_factory = StateFactory.new()
 	change_state("idle")
 	get_furniture_meshes()
+	fill_furnitures()
 	interactedWithMebel = false
 
 func _physics_process(delta):
@@ -125,6 +126,20 @@ func check_interactions():
 				interactedWithMebel = true
 			else:
 				interactedWithMebel = false
-		
+			
+			if Input.is_action_pressed("Interact"):
+				Inv.furnitureId = mebelArea.get_instance_id()
+				$furnitureUI.fillContainer()
 			# Tutaj możesz umieścić kod obsługi interakcji, np. podświetlenie mebla
 			# highlight_mebel(mebelArea, true)
+
+func fill_furnitures():
+	for furniture in meble:
+		var id = furniture.get_instance_id()
+		var items = {}
+		for i in range(2):
+			var randNumber = randi() % 20
+			items[i] = Inv.items[randNumber]
+			
+		Inv.furnitureItem[id] = items
+	

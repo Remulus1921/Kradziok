@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=3 uid="uid://kesnh6glx1lc"]
+
+[ext_resource type="Script" path="res://furniture_ui.gd" id="1_bwcbi"]
+[ext_resource type="Script" path="res://Furniture.gd" id="2_tgxgt"]
+[ext_resource type="Script" path="res://Inventory.gd" id="3_bmyxr"]
+[ext_resource type="PackedScene" uid="uid://dohudmwu44dho" path="res://inventory/ItemInfo.tscn" id="4_614sm"]
+
+[sub_resource type="Animation" id="Animation_7acha"]
+resource_name = "TrnasIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -650), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5attq"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -650)]
+}
+
+[sub_resource type="Animation" id="Animation_ihg2a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -650)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26prt"]
+_data = {
+"RESET": SubResource("Animation_ihg2a"),
+"TransOut": SubResource("Animation_5attq"),
+"TrnasIn": SubResource("Animation_7acha")
+}
+
+[node name="furnitureUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_bwcbi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -650.0
+offset_right = 40.0
+offset_bottom = -610.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1120.0
+offset_bottom = 571.0
+
+[node name="Close" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 53.0
+offset_right = 1084.0
+offset_bottom = 97.0
+text = "Zamknij"
+
+[node name="Furniture" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 176.0
+offset_right = 536.0
+offset_bottom = 432.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+script = ExtResource("2_tgxgt")
+
+[node name="Inventory" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 176.0
+offset_right = 1064.0
+offset_bottom = 432.0
+columns = 5
+script = ExtResource("3_bmyxr")
+
+[node name="ItemInfo" parent="Control" instance=ExtResource("4_614sm")]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_26prt")
+}
+
+[connection signal="pressed" from="Control/Close" to="." method="_on_close_pressed"]
