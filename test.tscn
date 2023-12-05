@@ -1495,7 +1495,7 @@ transform = Transform3D(-3.27835e-07, 0, 16, 0, 5, 0, -7.5, 0, -6.99382e-07, -0.
 mesh = SubResource("ArrayMesh_mm6l3")
 
 [node name="Player" parent="." instance=ExtResource("6_t6ukb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.43802, 0.561803, -2.93752)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53705, 0.250452, 1.13792)
 
 [node name="NPC1" parent="." instance=ExtResource("8_rhr2u")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)

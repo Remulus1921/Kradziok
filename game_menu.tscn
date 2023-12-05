@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkwt0dqr8adl1"]
+[gd_scene load_steps=4 format=3 uid="uid://dkwt0dqr8adl1"]
 
 [ext_resource type="Script" path="res://game_menu.gd" id="1_rl2lj"]
+[ext_resource type="Texture2D" uid="uid://dyu2gdgcfwrb4" path="res://menuBackground.png" id="2_wrt33"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_115rd"]
 
@@ -131,6 +132,18 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Powrót"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_wrt33")
+expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReturnToGameButton" to="." method="_on_return_to_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GameSettingsButton" to="." method="_on_game_settings_button_pressed"]
