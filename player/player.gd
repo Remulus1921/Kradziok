@@ -88,7 +88,8 @@ func enterHouse(Door):
 	if(!isOutside):
 		return
 		#DRZWI SZEROKOSC 2px
-	if(self.position.x > Door.position.x + 1 and self.position.x < Door.position.x + 1.1):
+	if(self.position.x > Door.position.x + 1 and self.position.x < Door.position.x + 1.1
+	and self.position.z > Door.position.z - 1 and self.position.z < Door.position.z + 1):
 		self.position.x = Door.position.x - 1.11
 		isOutside = false
 
