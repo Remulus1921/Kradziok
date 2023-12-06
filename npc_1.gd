@@ -3,8 +3,6 @@ extends CharacterBody3D
 var SPEED = 1.4
 const JUMP_VELOCITY = 4.5
 var destination = Vector3(0, 0, 0)
-var fieldOfView = 90.0  # Kąt widzenia w stopniach
-var viewDistance = 10.0  # Maksymalna odległość widzenia
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -34,7 +32,6 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	var direction = Vector3()
-	#checkFieldOfView()
 	if player.spotted == false:
 		if whereToGo == 0:
 			nav.target_position = markers.get_child(0).global_position
@@ -108,14 +105,20 @@ func run_door_interaction():
 	door_interaction(Door1floorRight, Door0floorRight, Floor1, Floor0, 0, true)
 	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1, 0, false)
 
-#func checkFieldOfView():
-	#var objects = get_overlapping_bodies()
-	#for obj in objects:
-		#if obj is CharacterBody3D and obj != self:
-			# Sprawdź, czy obiekt jest w zasięgu widzenia
-			#var direction_to_object = (obj.global_transform.origin - global_transform.origin).normalized()
-			#var angle_to_object = direction_to_object.angle_to(global_transform.basis.xform(Vector3(0, 0, 1)).normalized())
+func _on_vision_timer_timeout():
+	var overlaps = $VisionArea.get_overlapping_bodies()
+	if overlaps.size() > 0:
+		for overlap in overlaps:
+			if overlap.name == "Player":
+				var playerPos = overlap.global_transform.origin
+				$VisionRayCast.look_at(playerPos, Vector3.UP)
+				$VisionRayCast.force_raycast_update()
+				if $VisionRayCast.is_colliding():
+					var collider = $VisionRayCast.get_collider()
+					if collider.name == "Player":
+						player.spotted = true
 
-			#if angle_to_object <= deg2rad(fieldOfView / 2) and direction_to_object.length() <= viewDistance:
-				# Jeśli obiekt jest w zasięgu widzenia, możesz podjąć odpowiednie działania
-				#print("Znaleziono obiekt w zasięgu widzenia: ", obj.name)
+
+
+func _on_stand_timer_timeout():
+	pass # Replace with function body.
