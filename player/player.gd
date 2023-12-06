@@ -83,7 +83,8 @@ func exitHouse(Door):
 	if(isOutside):
 		return
 		
-	if(self.position.x < Door.position.x - 1 and self.position.x > Door.position.x - 1.1):
+	if(self.position.x < Door.position.x - 1 and self.position.x > Door.position.x - 1.1
+	and self.position.z > Door.position.z - 1 and self.position.z < Door.position.z + 1):
 		self.position.x = Door.position.x + 1.11 #TO MUSI BYC WIEKSZE NIZ WARUNEK
 		isOutside = true
 		test.lost = false
