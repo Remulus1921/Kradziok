@@ -5,6 +5,7 @@ func _ready():
 
 func _on_next_game_button_pressed():
 	Engine.time_scale = 1
+	Inv.inventory = {}
 	get_tree().reload_current_scene()
 
 func _on_quit_to_the_menu_button_pressed():

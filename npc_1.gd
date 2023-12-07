@@ -89,7 +89,7 @@ func _physics_process(delta):
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Walking")
 		else:
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Running")
-		#look_at(Vector3(nav.target_position))
+		look_at(Vector3(nav.target_position))
 	else:
 		get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
 	for collision_index in get_slide_collision_count():
