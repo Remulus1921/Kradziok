@@ -37,11 +37,13 @@ func _on_take_pressed():
 
 func _on_drop_pressed():
 	if Inv.furnitureItem[Inv.furnitureId].size() <= 10:
-		for i in Inv.items:
-			if Inv.items[i]["Name"] == ItemName:
+		for i in Inv.inventory:
+			if Inv.inventory[i]["Name"] == ItemName:
 				Inv.furnitureItem[Inv.furnitureId][Inv.furnitureItem[Inv.furnitureId].size()] = Inv.items[i]
+				Inv.furnitureItem[Inv.furnitureId][Inv.furnitureItem[Inv.furnitureId].size() - 1]["InventoryItem"] = false
 				var tempDic = {}
 				for x in Inv.inventory: 
+					print(i)
 					if x > i: 
 						tempDic[x-1] = Inv.inventory[x]
 					elif x < i:
