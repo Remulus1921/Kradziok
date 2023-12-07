@@ -5,9 +5,9 @@ var endGame = 0;
 
 var items = {
 	0: {
-		"Name": "Łańcuszek",
+		"Name": "Łańcuch",
 		"Cost": 300,
-		"Desc": "Złoty łańcuszek",
+		"Desc": "Gold chain my G",
 		"Icon": preload("res://Items/Image12.png"),
 	},
 	1: {
