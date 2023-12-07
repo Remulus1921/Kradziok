@@ -41,13 +41,6 @@ func _on_music_button_toggled(button_pressed):
 		musicSlider.editable = false;
 		musicSlider.value = 0;
 
-func _on_sound_button_toggled(button_pressed):
-	if button_pressed == true:
-		soundSlider.editable = true;
-	else:
-		soundSlider.editable = false;
-		soundSlider.value = 0;
-
 func _on_full_screen_button_toggled(button_pressed):
 	if button_pressed == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN);
@@ -59,6 +52,3 @@ func volume(bus_index, value):
 
 func _on_music_slider_value_changed(value):
 	volume(1, linear_to_db(value));	
-
-func _on_h_sound_slider_value_changed(value):
-	volume(2, value);
