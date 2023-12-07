@@ -1,6 +1,7 @@
 extends Node
 
 var furnitureId = 0;
+var endGame = 0;
 
 var items = {
 	0: {
