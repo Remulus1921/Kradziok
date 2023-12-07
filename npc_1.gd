@@ -37,7 +37,12 @@ func _physics_process(delta):
 			nav.target_position = markers.get_child(0).global_position
 			self.get_position_delta()
 			if self.position.x - markers.get_child(0).global_position.x < 0.3 && self.position.x - markers.get_child(0).global_position.x > -0.3 && self.position.y - markers.get_child(0).global_position.y < 0.3 && self.position.y - markers.get_child(0).global_position.y > -0.3 && self.position.z - markers.get_child(0).global_position.z < 0.3 && self.position.z - markers.get_child(0).global_position.z > -0.3:
-				whereToGo = whereToGo + 1
+				if $StandTimer.is_stopped()==true:
+					$StandTimer.start(5)
+				print($StandTimer.time_left)
+				self.position = markers.get_child(0).global_position
+				look_at(Vector3(-7, 0, -1.5))
+				get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
 		elif whereToGo == 1:
 			nav.target_position = markers.get_child(1).global_position
 			self.get_position_delta()
@@ -45,7 +50,12 @@ func _physics_process(delta):
 			nav.target_position = markers.get_child(2).global_position
 			self.get_position_delta()
 			if self.position.x - markers.get_child(2).global_position.x < 0.3 && self.position.x - markers.get_child(2).global_position.x > -0.3 && self.position.y - markers.get_child(2).global_position.y < 0.3 && self.position.y - markers.get_child(2).global_position.y > -0.3 && self.position.z - markers.get_child(2).global_position.z < 0.3 && self.position.z - markers.get_child(2).global_position.z > -0.3:
-				whereToGo = whereToGo + 1
+				if $StandTimer.is_stopped()==true:
+					$StandTimer.start(5)
+				print($StandTimer.time_left)
+				self.position = markers.get_child(2).global_position
+				look_at(Vector3(-7, 2.5, 0))
+				get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
 		elif whereToGo == 3:
 			nav.target_position = markers.get_child(3).global_position
 			self.get_position_delta()
@@ -79,9 +89,9 @@ func _physics_process(delta):
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Walking")
 		else:
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Running")
+		#look_at(Vector3(nav.target_position))
 	else:
 		get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
-	look_at(Vector3(nav.target_position))
 	for collision_index in get_slide_collision_count():
 		var collision = get_slide_collision(collision_index)
 		if collision.get_collider() is CharacterBody3D and "NPCs" not in collision.get_collider():
@@ -119,6 +129,6 @@ func _on_vision_timer_timeout():
 						player.spotted = true
 
 
-
 func _on_stand_timer_timeout():
-	pass # Replace with function body.
+	$StandTimer.stop()
+	whereToGo = whereToGo + 1
