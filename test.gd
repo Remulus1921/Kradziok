@@ -35,6 +35,9 @@ func endingGame():
 			lost_scene.show()
 			Engine.time_scale = 0
 		else:
+			if Inv.endGame == 0:
+				ending_scene.fillList()
+				Inv.endGame = 1
 			ending_scene.show()
 			Engine.time_scale = 0
 
