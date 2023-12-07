@@ -116,7 +116,6 @@ func get_furniture_meshes():
 	for pokoj in pokoje:
 		if pokoj is Node3D:
 			var mebleWpokoju = pokoj.get_children()
-			print(mebleWpokoju)
 			for mebelMesh in mebleWpokoju:
 				if mebelMesh is MeshInstance3D:
 					var mebel = mebelMesh.get_children()
@@ -125,7 +124,6 @@ func get_furniture_meshes():
 							var mebelArea = mebelStatic.get_children()
 							for Area in mebelArea:
 									if Area and Area is Area3D:
-										print("\nArea for collision", Area)
 										Area.add_to_group("interactable")
 										meble.append(Area)
 	
@@ -134,7 +132,6 @@ func check_interactions():
 	for mebelArea in meble:
 		if mebelArea.is_in_group("interactable") and mebelArea.overlaps_area(self.find_child("Area3D",false,true)):
 			if not interactedWithMebel:
-				print("Podszedłeś do mebla: ", mebelArea)
 				interactedWithMebel = true
 			else:
 				interactedWithMebel = false
@@ -151,7 +148,7 @@ func fill_furnitures():
 		var id = furniture.get_instance_id()
 		var items = {}
 		for i in range(2):
-			var randNumber = randi() % 20
+			var randNumber = randi() % 16
 			items[i] = Inv.items[randNumber]
 			
 		Inv.furnitureItem[id] = items

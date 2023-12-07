@@ -39,7 +39,6 @@ func _physics_process(delta):
 			if self.position.x - markers.get_child(0).global_position.x < 0.3 && self.position.x - markers.get_child(0).global_position.x > -0.3 && self.position.y - markers.get_child(0).global_position.y < 0.3 && self.position.y - markers.get_child(0).global_position.y > -0.3 && self.position.z - markers.get_child(0).global_position.z < 0.3 && self.position.z - markers.get_child(0).global_position.z > -0.3:
 				if $StandTimer.is_stopped()==true:
 					$StandTimer.start(5)
-				print($StandTimer.time_left)
 				self.position = markers.get_child(0).global_position
 				look_at(Vector3(-7, 0, -1.5))
 				get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
@@ -52,7 +51,6 @@ func _physics_process(delta):
 			if self.position.x - markers.get_child(2).global_position.x < 0.3 && self.position.x - markers.get_child(2).global_position.x > -0.3 && self.position.y - markers.get_child(2).global_position.y < 0.3 && self.position.y - markers.get_child(2).global_position.y > -0.3 && self.position.z - markers.get_child(2).global_position.z < 0.3 && self.position.z - markers.get_child(2).global_position.z > -0.3:
 				if $StandTimer.is_stopped()==true:
 					$StandTimer.start(5)
-				print($StandTimer.time_left)
 				self.position = markers.get_child(2).global_position
 				look_at(Vector3(-7, 2.5, 0))
 				get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
