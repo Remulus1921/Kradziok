@@ -91,6 +91,7 @@ button_pressed = true
 layout_mode = 2
 max_value = 5.0
 step = 0.05
+value = 1.0
 
 [node name="HFullScreenContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
 layout_mode = 2
