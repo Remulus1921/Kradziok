@@ -96,10 +96,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_0ys16")
 }
+autoplay = "RESET"
 
 [node name="Close" type="Button" parent="."]
 offset_left = 591.0
