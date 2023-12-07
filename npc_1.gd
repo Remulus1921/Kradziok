@@ -3,8 +3,6 @@ extends CharacterBody3D
 var SPEED = 1.4
 const JUMP_VELOCITY = 4.5
 var destination = Vector3(0, 0, 0)
-var fieldOfView = 90.0  # Kąt widzenia w stopniach
-var viewDistance = 10.0  # Maksymalna odległość widzenia
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -34,13 +32,17 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	var direction = Vector3()
-	#checkFieldOfView()
 	if player.spotted == false:
 		if whereToGo == 0:
 			nav.target_position = markers.get_child(0).global_position
 			self.get_position_delta()
 			if self.position.x - markers.get_child(0).global_position.x < 0.3 && self.position.x - markers.get_child(0).global_position.x > -0.3 && self.position.y - markers.get_child(0).global_position.y < 0.3 && self.position.y - markers.get_child(0).global_position.y > -0.3 && self.position.z - markers.get_child(0).global_position.z < 0.3 && self.position.z - markers.get_child(0).global_position.z > -0.3:
-				whereToGo = whereToGo + 1
+				if $StandTimer.is_stopped()==true:
+					$StandTimer.start(5)
+				print($StandTimer.time_left)
+				self.position = markers.get_child(0).global_position
+				look_at(Vector3(-7, 0, -1.5))
+				get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
 		elif whereToGo == 1:
 			nav.target_position = markers.get_child(1).global_position
 			self.get_position_delta()
@@ -48,7 +50,12 @@ func _physics_process(delta):
 			nav.target_position = markers.get_child(2).global_position
 			self.get_position_delta()
 			if self.position.x - markers.get_child(2).global_position.x < 0.3 && self.position.x - markers.get_child(2).global_position.x > -0.3 && self.position.y - markers.get_child(2).global_position.y < 0.3 && self.position.y - markers.get_child(2).global_position.y > -0.3 && self.position.z - markers.get_child(2).global_position.z < 0.3 && self.position.z - markers.get_child(2).global_position.z > -0.3:
-				whereToGo = whereToGo + 1
+				if $StandTimer.is_stopped()==true:
+					$StandTimer.start(5)
+				print($StandTimer.time_left)
+				self.position = markers.get_child(2).global_position
+				look_at(Vector3(-7, 2.5, 0))
+				get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
 		elif whereToGo == 3:
 			nav.target_position = markers.get_child(3).global_position
 			self.get_position_delta()
@@ -82,9 +89,9 @@ func _physics_process(delta):
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Walking")
 		else:
 			get_node("NPC1Anim/AnimationPlayer").play("NPC1Running")
+		look_at(Vector3(nav.target_position))
 	else:
 		get_node("NPC1Anim/AnimationPlayer").play("NPC1Idle")
-	look_at(Vector3(nav.target_position))
 	for collision_index in get_slide_collision_count():
 		var collision = get_slide_collision(collision_index)
 		if collision.get_collider() is CharacterBody3D and "NPCs" not in collision.get_collider():
@@ -108,14 +115,20 @@ func run_door_interaction():
 	door_interaction(Door1floorRight, Door0floorRight, Floor1, Floor0, 0, true)
 	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1, 0, false)
 
-#func checkFieldOfView():
-	#var objects = get_overlapping_bodies()
-	#for obj in objects:
-		#if obj is CharacterBody3D and obj != self:
-			# Sprawdź, czy obiekt jest w zasięgu widzenia
-			#var direction_to_object = (obj.global_transform.origin - global_transform.origin).normalized()
-			#var angle_to_object = direction_to_object.angle_to(global_transform.basis.xform(Vector3(0, 0, 1)).normalized())
+func _on_vision_timer_timeout():
+	var overlaps = $VisionArea.get_overlapping_bodies()
+	if overlaps.size() > 0:
+		for overlap in overlaps:
+			if overlap.name == "Player":
+				var playerPos = overlap.global_transform.origin
+				$VisionRayCast.look_at(playerPos, Vector3.UP)
+				$VisionRayCast.force_raycast_update()
+				if $VisionRayCast.is_colliding():
+					var collider = $VisionRayCast.get_collider()
+					if collider.name == "Player":
+						player.spotted = true
 
-			#if angle_to_object <= deg2rad(fieldOfView / 2) and direction_to_object.length() <= viewDistance:
-				# Jeśli obiekt jest w zasięgu widzenia, możesz podjąć odpowiednie działania
-				#print("Znaleziono obiekt w zasięgu widzenia: ", obj.name)
+
+func _on_stand_timer_timeout():
+	$StandTimer.stop()
+	whereToGo = whereToGo + 1

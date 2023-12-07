@@ -4,13 +4,13 @@ extends CharacterBody3D
 const SPEED = 1.2
 const JUMP_VELOCITY = 4.5
 var direction
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 
 @onready var AnimTree = get_node("AnimationTree")
 @onready var playback = AnimTree.get("parameters/playback")
 @onready var player_mesh = get_node("Player")
+
 
 @onready var test = $"../"
 @onready var Door1floorMiddle = $"../NavigationRegion3D/p2/doorMiddle"
@@ -19,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var Door0floorRight = $"../NavigationRegion3D/p1/doorRight"
 @onready var DoorExit = $"../NavigationRegion3D/p1/doorExit"
 @onready var Meble = $"../NavigationRegion3D/Meble"
+
 
 var FloorHeight = 2.5
 var Floor0 = 0
@@ -30,9 +31,9 @@ var ShiftRight = 0.2
 var isOutside = true
 var interactedWithMebel
 var meble = []
-
 var onFloor0 = true;
 var spotted = false;
+
 
 func _ready():
 	state_factory = StateFactory.new()
@@ -41,8 +42,8 @@ func _ready():
 	fill_furnitures()
 	interactedWithMebel = false
 
+
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
@@ -52,16 +53,16 @@ func _physics_process(delta):
 	run_door_interaction()
 	move_and_slide()
 	check_interactions()
+	
+	
 func change_state(new_state_name):
 	if state != null:
 		state.exit()
 		state.queue_free()
 		
-	#Add new state
 	state = state_factory.get_state(new_state_name).new()
 	state.setup("change_state", playback, self)
 	state.name = new_state_name
-	
 	add_child(state)
 	
 		
@@ -74,23 +75,32 @@ func door_interaction(From, To, ActuallFloor, Floor, whichFloor):
 		self.position.z = To.position.z + 2
 		self.rotation.y = 180	
 		onFloor0 = whichFloor
+		
+		direction = direction.rotated(Vector3.UP, $"../Camera3D".transform.basis.get_euler().y + Floor).normalized()
+		
+	
 func exitHouse(Door):
 	if(isOutside):
 		return
 		
-	if(self.position.x < Door.position.x - 1 and self.position.x > Door.position.x - 1.1):
+	if(self.position.y < Floor1 and
+		self.position.x < Door.position.x - 1 and self.position.x > Door.position.x - 1.1
+	and self.position.z > Door.position.z - 1 and self.position.z < Door.position.z + 1):
 		self.position.x = Door.position.x + 1.11 #TO MUSI BYC WIEKSZE NIZ WARUNEK
 		isOutside = true
 		test.lost = false
 		test.endGame = true
 
+
 func enterHouse(Door):
 	if(!isOutside):
 		return
 		#DRZWI SZEROKOSC 2px
-	if(self.position.x > Door.position.x + 1 and self.position.x < Door.position.x + 1.1):
+	if(self.position.x > Door.position.x + 1 and self.position.x < Door.position.x + 1.1
+	and self.position.z > Door.position.z - 1 and self.position.z < Door.position.z + 1):
 		self.position.x = Door.position.x - 1.11
 		isOutside = false
+
 
 func run_door_interaction():
 	door_interaction(Door0floorMiddle, Door1floorMiddle, Floor0, Floor1, false)
@@ -99,6 +109,7 @@ func run_door_interaction():
 	door_interaction(Door0floorRight, Door1floorRight, Floor0, Floor1, false)
 	enterHouse(DoorExit)
 	exitHouse(DoorExit)
+	
 	
 func get_furniture_meshes():
 	var pokoje = Meble.get_children()
@@ -118,6 +129,7 @@ func get_furniture_meshes():
 										Area.add_to_group("interactable")
 										meble.append(Area)
 	
+	
 func check_interactions():
 	for mebelArea in meble:
 		if mebelArea.is_in_group("interactable") and mebelArea.overlaps_area(self.find_child("Area3D",false,true)):
@@ -133,6 +145,7 @@ func check_interactions():
 			# Tutaj możesz umieścić kod obsługi interakcji, np. podświetlenie mebla
 			# highlight_mebel(mebelArea, true)
 
+
 func fill_furnitures():
 	for furniture in meble:
 		var id = furniture.get_instance_id()
@@ -142,4 +155,3 @@ func fill_furnitures():
 			items[i] = Inv.items[randNumber]
 			
 		Inv.furnitureItem[id] = items
-	
