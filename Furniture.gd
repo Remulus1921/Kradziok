@@ -20,5 +20,6 @@ func fillFurnitureSlots():
 		get_child(i).ItemName = items[i]["Name"]
 		get_child(i).ItemDesc = items[i]["Desc"]
 		get_child(i).ItemCost = items[i]["Cost"]
+		get_child(i).ItemInInv = items[i]["InventoryItem"]
 		get_child(i).hasItem = true
 		get_child(i).get_node("Icon").texture = (items[i]["Icon"])
