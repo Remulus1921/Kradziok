@@ -109,9 +109,9 @@ script = ExtResource("2_a2xj7")
 [node name="ItemInfo" parent="Inventory" instance=ExtResource("1_wnqd8")]
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_kcpop")
 }
+autoplay = "RESET"
 
 [connection signal="pressed" from="Inventory/Close" to="." method="_on_close_pressed"]
