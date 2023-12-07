@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtw0xywl2hssl"]
 
-[ext_resource type="AudioStream" uid="uid://bok3sp3ue1wc4" path="res://Joy Wants Eternity - From Embrace To Embrace.mp3" id="1_r2l2e"]
+[ext_resource type="AudioStream" uid="uid://c8lw7tr1ovjhq" path="res://sneaky-feet-150618.mp3" id="1_afj2w"]
 
 [node name="Music" type="AudioStreamPlayer"]
-stream = ExtResource("1_r2l2e")
+stream = ExtResource("1_afj2w")
 autoplay = true
 bus = &"Music"

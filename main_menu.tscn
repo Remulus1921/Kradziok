@@ -133,9 +133,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Powrót"
 
-[node name="Sound" type="AudioStreamPlayer" parent="."]
-bus = &"Sound"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
