@@ -17,7 +17,7 @@ func _on_close_pressed():
 
 
 func _on_take_pressed():
-	if Inv.inventory.size() <= 10:
+	if Inv.inventory.size() < 10:
 		Inv.addItem(ItemName)
 		for f in Inv.furnitureItem[Inv.furnitureId]:
 			if Inv.furnitureItem[Inv.furnitureId][f]["Name"] == ItemName:
@@ -32,11 +32,13 @@ func _on_take_pressed():
 				_on_close_pressed()
 				get_node("../Inventory").fillInventorySlots()
 				get_node("../Furniture").fillFurnitureSlots()
+	else:
+		get_node("Take").hide()
 	_on_close_pressed()
 
 
 func _on_drop_pressed():
-	if Inv.furnitureItem[Inv.furnitureId].size() <= 10:
+	if Inv.furnitureItem[Inv.furnitureId].size() < 10:
 		for i in Inv.inventory:
 			if Inv.inventory[i]["Name"] == ItemName:
 				Inv.furnitureItem[Inv.furnitureId][Inv.furnitureItem[Inv.furnitureId].size()] = Inv.items[i]
@@ -53,4 +55,5 @@ func _on_drop_pressed():
 				_on_close_pressed()
 				get_node("../Inventory").fillInventorySlots()
 				get_node("../Furniture").fillFurnitureSlots()
+	
 	_on_close_pressed()

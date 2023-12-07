@@ -39,9 +39,13 @@ func _input(event):
 				if ItemInInv:
 					itemInfo.get_node("Drop").show()
 					itemInfo.get_node("Take").hide()
+					if Inv.furnitureItem[Inv.furnitureId].size() >= 10:
+						itemInfo.get_node("Drop").hide()
 				elif !ItemInInv: 
 					itemInfo.get_node("Drop").hide()
 					itemInfo.get_node("Take").show()
+					if Inv.inventory.size() >= 10:
+						itemInfo.get_node("Take").hide()
 			else:
 				itemInfo.get_node("Drop").hide()
 				itemInfo.get_node("Take").hide()
