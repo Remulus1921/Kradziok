@@ -10,6 +10,7 @@ extends Control
 
 func _on_new_game_button_pressed():
 	GlobalScript.retToMainMenu = false;
+	Inv.inventory = {}
 	get_tree().change_scene_to_file("res://test.tscn")
 
 func _on_settings_button_pressed():

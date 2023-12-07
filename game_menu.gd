@@ -4,7 +4,6 @@ extends Control
 @onready var menu := $MarginContainer/VBoxContainer
 @onready var settings := $Settings
 @onready var musicSlider := $Settings/MarginContainer/VBoxContainer/MusicSlider
-@onready var soundSlider := $Settings/MarginContainer/VBoxContainer/SoundSlider
 
 func _ready():
 	volume(1, linear_to_db(musicSlider.value));
